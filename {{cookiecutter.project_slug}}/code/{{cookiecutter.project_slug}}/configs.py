@@ -13,7 +13,6 @@ Author: Simon M. Hofmann | <[firstname].[lastname][at]pm.me> | 2023
 
 # %% Imports
 import os
-import platform
 import toml
 
 from pathlib import Path

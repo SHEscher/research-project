@@ -3,7 +3,7 @@ Main module for {{ cookiecutter.project_slug }}
 
 Author:  {{ cookiecutter.full_name }}
 Contact: {{ cookiecutter.email }}
-Years:   { % now 'local', '%Y' % }
+Years:   {% now 'local', '%Y' %}
 """
 
 # %% Import
