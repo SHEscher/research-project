@@ -1,0 +1,20 @@
+PROJECT_NAME = "{{ cookiecutter.project_slug }}"
+
+# all paths are relative to the PROJECT_ROOT folder named PROJECT_NAME
+[paths]
+DATA = "./data"
+RESULTS = "./results"
+CACHE = "./data/cache"
+    [paths.results]
+    GLM = "./results/glm"
+
+# Follwing creates arrays of tables
+# [[tester]]
+# id = 3
+# name = "Nomis"
+# 
+# [[tester]]
+# id = 2
+# name = "Divad"
+
+# Note store private configs in same folder: "./[PRIVATE_PREFIX]_configs.toml"
