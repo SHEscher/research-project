@@ -11,8 +11,6 @@ or we the cookiecutter wrapper [`projectchest`](https://github.com/SHEscher/Proj
 
 ## TODO's for research-project template
 
-- [ ] Offer alternative to `GitHub`, e.g. `GitLab`
-- [ ] Color print in pre- & post-scripts in `hooks/`
 - [ ] ...
 
 ## Credits

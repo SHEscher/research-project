@@ -21,7 +21,7 @@
   "email": "Provide author's email:",
   "github_username": "Proive GitHub username or organization:",
   "project_name": "Select your research project name:",
-  "project_slug": "Select a short name for your research project / module:",
+  "project_slug": "Select a short name for your research project / module (one word):",
   "project_short_description": "Write a short project description:",
   "version": "Version of your research project:",
   "python_version": "Which Python version to use:",
