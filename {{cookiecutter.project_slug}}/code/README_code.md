@@ -20,5 +20,25 @@ Contact:   {{ cookiecutter.email }}
 ## Codebase
 *Refer to the corresponding code/scripts written for the analysis. Which languages (Python, R Matlab, ...) where used? Are there specific package versions, which one should take care of? Or is there a container (e.g, Docker) or virtual environment?*
 
+### Configs
+Paths to data, parameter settings, etc. are stored in the config file: `./code/configs/config.toml`
+
+Private config files that contain, e.g. passwords, and therefore should not be shared, or mirrored to a remote repository can be listed in: `./code/configs/private_config.toml`
+
+To use configs in the code, one can use the following code:
+
+```python
+from {{ cookiecutter.project_slug }}.configs import config, path_to
+
+# get path to data
+path_to_data = path_to.DATA
+
+# Get parameter from config
+weight_decay = config.params.weight_decay
+
+# Get private parameter from config
+api_key = config.service_x.api_key
+```
+
 ## COPYRIGHT/LICENSE
 *One could add information about code sharing (e.g., is the code published on [GitLab](https://gitlab.gwdg.de/users/sign_in) or Github ...), license and copy right issues*

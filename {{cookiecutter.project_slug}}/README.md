@@ -27,15 +27,23 @@ Check out following resources.
 
 *A brief description of the subsequent folder structure of the project (Where is what?). Anticipate new lab members who suppose to be able to orientate within this structure without your help. At the same time, avoid too detailed descriptions. Down the folder structure, there suppose to be further READMEs explaining subsequent folders & data.*
 
-## Install project as package
+## Install research code as package
+
+In case there is no virtual / conda environment yet:
 
 ```shell
 CONDA_ENV_NAME="{{ cookiecutter.project_slug[:4]}}_{{cookiecutter.python_version[:4] }}"
 conda create -n ${CONDA_ENV_NAME} python={{ cookiecutter.python_version }}
 conda activate ${CONDA_ENV_NAME}
-pip install --upgrade pip
+```
+
+Then install the code of the research project as python package:
+
+```shell
 pip install -e .
 ```
+
+Note! The `-e` flag installs the package in editable mode, i.e. changes to the code will be directly reflected in the installed package. Moreover, the code keeps its access to the research data in the underlying folder structure. Thus, the `-e` flag is recommended to use.
 
 ## Publications
 

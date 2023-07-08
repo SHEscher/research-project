@@ -1,12 +1,11 @@
 # Bigger research folders
 data/
 literature/pdfs/
-# literature/  # or whole folder
 organisation/
 publications/
 results/
 
-# Private configs
+# Private configs in ./code/confings/
 *_config.toml
 
 # Byte-compiled / optimized / DLL files

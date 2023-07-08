@@ -8,6 +8,9 @@ CACHE = "./data/cache"
     [paths.results]
     GLM = "./results/glm"
 
+[params]
+weight_decay = 0.01
+
 # Follwing creates arrays of tables
 # [[tester]]
 # id = 3

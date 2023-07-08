@@ -14,7 +14,11 @@ maintainers = [
   {name = "{{ cookiecutter.full_name }}", email = "{{ cookiecutter.email }}"}
 ]
 classifiers = [
-    "Programming Language :: Python :: {{ cookiecutter.python_version }}"
+  "Intended Audience :: Researchers",
+  "Intended Audience :: Developers",
+  "Natural Language :: English",
+  "Programming Language :: Python :: {{ cookiecutter.python_version.split('.')[0] }}",
+  "Programming Language :: Python :: {{ cookiecutter.python_version }}"
 ]
 
 dependencies = [
@@ -38,21 +42,27 @@ documentation = "https://peps.python.org/pep-0621/"  # TODO: change to actual do
 repository = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}"  # TODO: change to actual repository
 changelog = "https://github.com//{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/CHANGELOG.md"
 
+# For command line interface (CLI)
+# [project.scripts]
+# {{ cookiecutter.project_slug }} = "{{ cookiecutter.project_slug }}.{{ cookiecutter.project_slug }}:main"
 
 [tool.setuptools]
 platforms = ["unix", "linux", "osx", "cygwin", "win32"]
 zip-safe = false
-packages = ["{{ cookiecutter.project_slug }}"]
-package-dir = {"" = "code"}
 
 # # To automatically find the package(s) (Beta feature (Oct, 2022)):
-# [tool.setuptools.packages.find]
-# where = ["code"]
-# include = ["{{ cookiecutter.project_slug }}"]
-# exclude = ["tests"]
+[tool.setuptools.packages.find]
+where = ["code"]
+include = ["{{ cookiecutter.project_slug }}"]
+exclude = ["tests"]
 
+# Include non-python files in the package
 # [options.package_data]
-# {{ cookiecutter.project_slug }} = "py.typed"  # still buggy (July, 2023)
+# {{ cookiecutter.project_slug }} = ["*.txt", "*.rst"]
+
+# Exclude specific non-python files in the package
+# [tool.setuptools.exclude-package-data]
+# {{ cookiecutter.project_slug }} = [".gitattributes"]
 
 [tool.flake8]
 max-line-length = 119
