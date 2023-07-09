@@ -1,19 +1,18 @@
 """
 Configuration for {{ cookiecutter.project_name }} project
 
-# Note store private configs in same folder as 'config.toml', namely: "./[PRIVATE_PREFIX]_configs.toml"
+Note:
+    * store private configs in the same folder as 'config.toml', namely: "./[PRIVATE_PREFIX]_configs.toml"
+    * keep the prefix, such that it is ignored by git
 
-Check out also this repo, which is doing similar things:
-* https://github.com/google/ml_collections
-
-Moreover, this could also be solved using .env file together with python-dotenv package.
+Alternatively, Configs could als be set using .env file together with python-dotenv package.
 
 Author: Simon M. Hofmann | <[firstname].[lastname][at]pm.me> | 2023
 """
 
 # %% Imports
 import os
-import toml
+import toml  # since python 3.11, there is also tomllib
 
 from pathlib import Path
 from typing import Any, Optional, Dict
@@ -146,6 +145,7 @@ config.paths.update_paths()
 
 # Extract paths
 path_to = config.paths
+params = config.params
 
 # Welcome
 print("\n" + ("*"*95 + "\n")*2 + "\n" + "\t"*10 + PROJECT_NAME + "\n"*2 + ("*"*95 + "\n")*2)

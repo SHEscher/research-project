@@ -12,25 +12,30 @@ Contact:   {{ cookiecutter.email }}
 ***
 
 ## Description of analysis
-*List relevant information one need to know about the analysis. For instance, one could describe the computational model that was applied, and which statistical approach has been chosen for.*
+
+*List relevant information one needs to know about the analysis. For instance, one could describe the computational model that was applied, and which statistical approach has been chosen for.*
 
 ## Preprocessing
-*General information regarding preprocessing could be written in [README_data.md](../data/README_data.md). One could add here more implementation specific information (e.g., which toolboxes were used)*
+
+*General information regarding preprocessing could be written in the data [README.md](../data/README.md). One could add here more implementation-specific information (e.g., which toolboxes were used)*
 
 ## Codebase
-*Refer to the corresponding code/scripts written for the analysis. Which languages (Python, R Matlab, ...) where used? Are there specific package versions, which one should take care of? Or is there a container (e.g, Docker) or virtual environment?*
+
+*Refer to the corresponding code/scripts written for the analysis. Which languages (Python, R Matlab, ...) where used? Are there specific package versions, which one should take care of? Or is there a container (e.g., Docker) or virtual environment?*
 
 ### Configs
+
 Paths to data, parameter settings, etc. are stored in the config file: `./code/configs/config.toml`
 
-Private config files that contain, e.g. passwords, and therefore should not be shared, or mirrored to a remote repository can be listed in: `./code/configs/private_config.toml`
+Private config files that contain, e.g., passwords, and therefore should not be shared,
+or mirrored to a remote repository can be listed in: `./code/configs/private_config.toml`
 
-To use configs in the code, one can use the following code:
+To use configs, do the following in the python scripts:
 
 ```python
 from {{ cookiecutter.project_slug }}.configs import config, path_to
 
-# get path to data
+# get the path to data
 path_to_data = path_to.DATA
 
 # Get parameter from config
@@ -41,4 +46,5 @@ api_key = config.service_x.api_key
 ```
 
 ## COPYRIGHT/LICENSE
+
 *One could add information about code sharing (e.g., is the code published on [GitLab](https://gitlab.gwdg.de/users/sign_in) or Github ...), license and copy right issues*

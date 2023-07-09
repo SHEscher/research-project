@@ -7,9 +7,9 @@ This is a [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/) templat
 ## Usage
 
 This template can be used direclty with [`cookiecutter`](https://github.com/cookiecutter/cookiecutter),
-or we the cookiecutter wrapper [`projectchest`](https://github.com/SHEscher/ProjectChest).
+or with the cookiecutter wrapper [`treasure`](https://github.com/SHEscher/Treasure).
 
-## TODO's for research-project template
+## TODO's for the `research-project` template
 
 - [ ] ...
 

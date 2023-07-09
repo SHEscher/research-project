@@ -1,13 +1,11 @@
 """
-The {{ cookiecutter.project_slug }} package installation and unit testing is adapted from:
+Setup the {{ cookiecutter.project_slug }} package.
 
-https://github.com/mCodingLLC/SlapThatLikeButton-TestingStarterProject
-
-With the new (Oct, 2022), pure pyproject.toml installation, see:
+Check the new setuptools installation (Oct, 2022), purely based on pyproject.toml:
 * https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
-* https://peps.python.org/pep-0621/
+* https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#declaring-project-metadata
 
-See the corresponding tutorial:
+Check out this tutorial for more information on how to package a Python project:
 https://www.youtube.com/watch?v=DhUpxWjOhME
 """
 

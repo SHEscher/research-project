@@ -11,9 +11,9 @@ Contact:   {{ cookiecutter.email }}
 
 ***
 
-*In general, one can add README's in nearly every folder. The guiding principle should always be that any person who is not familiar with the project can find their way exclusively via the README's. – 'It may be you one day'*
+*In general, one can add README's in nearly every folder. The guiding principle should always be that any person who is not familiar with the project can find their way exclusively via the README's – 'It may be you one day'*
 
-Check out following resources.
+Check out the following resources.
 
 * https://www.makeareadme.com
 
@@ -25,11 +25,11 @@ Check out following resources.
 
 ## Project structure
 
-*A brief description of the subsequent folder structure of the project (Where is what?). Anticipate new lab members who suppose to be able to orientate within this structure without your help. At the same time, avoid too detailed descriptions. Down the folder structure, there suppose to be further READMEs explaining subsequent folders & data.*
+*A brief description of the folder structure of the project (Where is what?). Anticipate new lab members who suppose to be able to orientate within this structure without your help. At the same time, avoid too detailed descriptions. Down the folder structure, there suppose to be further README's explaining subsequent folders & data.*
 
 ## Install research code as package
 
-In case there is no virtual / conda environment yet:
+In case, there is no virtual / conda environment yet:
 
 ```shell
 CONDA_ENV_NAME="{{ cookiecutter.project_slug[:4]}}_{{cookiecutter.python_version[:4] }}"
@@ -43,7 +43,10 @@ Then install the code of the research project as python package:
 pip install -e .
 ```
 
-Note! The `-e` flag installs the package in editable mode, i.e. changes to the code will be directly reflected in the installed package. Moreover, the code keeps its access to the research data in the underlying folder structure. Thus, the `-e` flag is recommended to use.
+Note: The `-e` flag installs the package in editable mode,
+i.e., changes to the code will be directly reflected in the installed package.
+Moreover, the code keeps its access to the research data in the underlying folder structure.
+Thus, the `-e` flag is recommended to use.
 
 ## Publications
 
