@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # Create a new conda environment and activate it
 {% if cookiecutter.create_conda_env == 'y' -%}
