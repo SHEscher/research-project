@@ -104,26 +104,38 @@ def set_wd(new_dir: str) -> None:
     assert PROJECT_NAME in str(Path.cwd()), \
         f'Current working dir "{Path.cwd()}" is outside of project "{PROJECT_NAME}".'
 
-    # Remove '/' if new_dir == 'folder/' OR '/folder'
-    new_dir = "".join(new_dir.split("/"))
+    print("\033[94m" + f"Current working dir:\t{Path.cwd()}" + "\033[0m")  # print blue
 
-    print("\033[94m" + f"Current working dir:\t{Path.cwd()}" + "\033[0m")  # blue print
+    # Check if new_dir is folder path or just folder name
+    change_dir = False
+    if os.path.isabs(new_dir):
+        found = Path(new_dir).is_dir()
+        change_dir = Path(new_dir).absolute() != Path.cwd()
+        if found and change_dir:
+            os.chdir(new_dir)
 
-    found = False if new_dir != str(Path.cwd()).split("/")[-1] else True
+    else:
+        # Remove '/' if new_dir == 'folder/' OR '/folder'
+        new_dir = "".join(new_dir.split("/"))
 
-    # First look down the tree
-    if not found:
-        # Note: This works only for unique folder names
-        for path in Path(PROJECT_ROOT).glob(f"**/{new_dir}"):  # 2. '_' == files
-            os.chdir(path)
-            found = True
-            break
-        if found:
-            print("\033[93m" + f"New working dir:\t{Path.cwd()}\n" + "\033[0m")  # yellow print
-        else:
-            print("\033[91m"
-                  + f"Given folder not found. Working dir remains:\t{Path.cwd()}\n"
-                  + "\033[0m")  # red print
+        found = new_dir == Path.cwd().name
+        change_dir = not found
+
+        # First look down the tree
+        if not found:
+            # Note: This works only for unique folder names
+            for path in sorted(Path(PROJECT_ROOT).glob(f"**/{new_dir}"), key=lambda x: len(str(x))):  # 2. '_' == files
+                change_dir = path != Path.cwd()
+                if change_dir:
+                    os.chdir(path)
+                found = True
+                break
+    if found and change_dir:
+        print("\033[93m" + f"New working dir:\t{Path.cwd()}\n" + "\033[0m")  # yellow print
+    elif found and not change_dir:
+        pass
+    else:
+        print("\033[91mGiven folder not found. Working dir remains:\t{Path.cwd()}\n\033[0m")  # red print
 
 
 # %% Setup configuration object << o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
@@ -137,11 +149,15 @@ for config_file in Path(__file__).parent.glob("../configs/*config.toml"):
 
 # Extract some useful globals
 PROJECT_NAME = config.PROJECT_NAME
-PROJECT_ROOT = __file__[:__file__.find(PROJECT_NAME) + len(PROJECT_NAME)]
 
-# Set root path to config file & update paths
-config.paths.PROJECT_ROOT = PROJECT_ROOT
-config.paths.update_paths()
+# Get project root path
+if hasattr(config.paths, "PROJECT_ROOT"):
+    PROJECT_ROOT = config.paths.PROJECT_ROOT
+else:
+    PROJECT_ROOT = __file__[:__file__.find(PROJECT_NAME) + len(PROJECT_NAME)]
+    # Set root path to config file & update paths
+    config.paths.PROJECT_ROOT = PROJECT_ROOT
+    config.paths.update_paths()
 
 # Extract paths
 path_to = config.paths
@@ -151,6 +167,6 @@ params = config.params
 print("\n" + ("*"*95 + "\n")*2 + "\n" + "\t"*10 + PROJECT_NAME + "\n"*2 + ("*"*95 + "\n")*2)
 
 # Set project working directory
-set_wd(PROJECT_NAME)
+set_wd(PROJECT_ROOT)
 
 # <<<<<<<<<<< ooo >>>>>>>>>>>>>> ooo <<<<<<<<<<< ooo >>>>>>>>>>>>>> ooo <<<<<<<<<<< ooo >>>>>>>>>>>>>> END
