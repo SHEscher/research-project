@@ -35,6 +35,11 @@ if command -v conda >/dev/null 2>&1; then
     echo -e "\033[34m\nInstalling '{{ cookiecutter.project_slug }}' as python package in editable mode ...\n\033[0m"
     ${CONDA_PREFIX}/bin/python -m pip install -e .
     # We are already root folder of {{ cookiecutter.project_slug }} so . is enough
+    
+    # Add the new environment as kernel to jupyter (notebook and lab)
+    echo -e "\033[34m\nAdding conda environment '${CONDA_DEFAULT_ENV}' as kernel to jupyter ...\n\033[0m"
+    ${CONDA_PREFIX}/bin/python -m ipykernel install --user --name=${CONDA_DEFAULT_ENV}
+    
 
 else
     echo -e "\033[31mconda is not available. Please install conda and try again.\033[0m"

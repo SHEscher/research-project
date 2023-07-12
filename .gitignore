@@ -71,6 +71,9 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 
+# mypy
+.mypy_cache/
+
 # Translations
 *.mo
 *.pot
@@ -98,5 +101,16 @@ output/
 python_boilerplate/
 cookiecutter-pypackage-env/
 
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# R
+.Rproj.user/
+
 # IDE settings
 .vscode/
+.idea/
+
+# Mac specific
+*.key
+.DS_Store
