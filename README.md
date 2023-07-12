@@ -11,7 +11,7 @@ or with the cookiecutter wrapper [`treasure`](https://github.com/SHEscher/Treasu
 
 ## TODO's for the `research-project` template
 
-- [ ] ...
+- [ ] add `./cde/notebooks/` to template, that contains a example juptyer notebook
 
 ## Credits
 
