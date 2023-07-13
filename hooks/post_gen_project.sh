@@ -37,8 +37,8 @@ if command -v conda >/dev/null 2>&1; then
     # We are already root folder of {{ cookiecutter.project_slug }} so . is enough
 
     # Add the new environment as kernel to jupyter (notebook and lab)
-    echo -e "\033[34m\nAdding conda environment '${CONDA_DEFAULT_ENV}' as kernel to jupyter ...\n\033[0m"
-    ${CONDA_PREFIX}/bin/python -m ipykernel install --user --name=${CONDA_DEFAULT_ENV}
+    echo -e "\033[34m\nAdding conda environment '${CONDA_ENV_NAME}' as kernel to jupyter ...\n\033[0m"
+    ${CONDA_PREFIX}/bin/python -m ipykernel install --user --name=${CONDA_ENV_NAME}
 
 
 else
@@ -48,6 +48,11 @@ fi
 
 # Activate git in the project
 {% if cookiecutter.init_git == 'y' -%}
-echo -e "\033[34m\nActivating git in {{ cookiecutter.project_slug }} ...\n\033[0m"
-git init
+# check if .git/ exists
+if [ -d ".git" ]; then
+    echo -e ""
+else
+    echo -e "\033[34m\nActivating git in {{ cookiecutter.project_slug }} ...\n\033[0m"
+    git init
+fi
 {% endif %}

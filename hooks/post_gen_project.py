@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 This hook is run after cookiecutter finishes creating the project.
-It should run after the post_gen_project.sh script.
+We can't dertermine whether this runs before or after post_gen_project.sh script. This depends on the OS.
 """
 
 # %% Import
@@ -53,8 +53,11 @@ if __name__ == '__main__':
     {% if cookiecutter.init_git == 'y' -%}
     # Run git add . & make first commit
     print("\033[34m\nRunning git add . & do first project commit ...\n\033[0m")
-    subprocess.run(["git", "add", "."], check=True)
-    subprocess.run(["git", "commit", "-m", "Initial commit of {{ cookiecutter.project_slug }}"], check=True)
+    if not (PROJECT_DIRECTORY / ".git/").exists():
+        print("\033[34m\nActivating git in {{ cookiecutter.project_slug }} ...\n\033[0m")
+        subprocess.run(["git", "init"], check=False)
+    subprocess.run(["git", "add", "."], check=False)
+    subprocess.run(["git", "commit", "-m", "Initial commit of {{ cookiecutter.project_slug }}"], check=False)
     {% endif %}
 
     print("\033[32m\n\nI am done creating the new research project in: %s\n\033[0m" % PROJECT_DIRECTORY)
