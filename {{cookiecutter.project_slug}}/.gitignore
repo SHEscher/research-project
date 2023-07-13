@@ -1,9 +1,9 @@
 # Bigger research folders
-data/
-literature/pdfs/
-organisation/
-publications/
-results/
+./data/
+./literature/pdfs/
+./organisation/
+./publications/
+./results/
 
 # Private configs in ./code/confings/
 *_config.toml
