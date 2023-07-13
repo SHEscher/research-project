@@ -1,6 +1,6 @@
 # {{ cookiecutter.project_name }}
 
-`[Last update: {% now 'local', '%B%e, %Y' %}]`
+`[Last update: {% now 'local', '%B %e, %Y' %}]`
 
 ***
 Period: {% now 'local', '%Y-%m' %} - ... <br>
