@@ -9,7 +9,7 @@ This is a [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/) templat
 This template can be used direclty with [`cookiecutter`](https://github.com/cookiecutter/cookiecutter),
 or with the cookiecutter wrapper [`treasure`](https://github.com/SHEscher/Treasure).
 
-## TODO's for the `research-project` template
+## TODO's
 
 - [ ] ...
 
