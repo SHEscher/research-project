@@ -11,6 +11,7 @@ or with the cookiecutter wrapper [`treasure`](https://github.com/SHEscher/Treasu
 
 ## TODO's
 
+- [ ] Remove .gitignore in case the option is not selected
 - [ ] ...
 
 ## Credits
