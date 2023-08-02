@@ -1,6 +1,10 @@
 """
-Use me as template for other scripts.
-You can add me as file template in your IDE (PyCharm, VS Code, etc).
+Use me as template for other python scripts.
+
+You can add me as file template for python in your IDE:
+    PyCharm: Settings > File and Code Templates > Python Script
+    VS Code: e.g., as Snippets
+    etc: ...
 
 Author:  {{ cookiecutter.full_name }}
 Contact: {{ cookiecutter.email }}
