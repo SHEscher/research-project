@@ -7,10 +7,10 @@ readme = "README.md"
 requires-python = ">={{ cookiecutter.python_version }}"
 license = { file = "LICENSE" }
 authors = [
-    { name = "{{ cookiecutter.full_name }}", email = "{{ cookiecutter.email }}" }
+    { name = "{{ cookiecutter.full_name }}", email = "{{ cookiecutter.email }}" },
 ]
 maintainers = [
-    { name = "{{ cookiecutter.full_name }}", email = "{{ cookiecutter.email }}" }
+    { name = "{{ cookiecutter.full_name }}", email = "{{ cookiecutter.email }}" },
 ]
 keywords = ["very", "great", "study"]
 # Check for classifiers: https://pypi.org/classifiers/
@@ -20,29 +20,23 @@ classifiers = [
     "Natural Language :: English",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: {{ cookiecutter.python_version.split('.')[0] }}",
-    "Programming Language :: Python :: {{ cookiecutter.python_version }}"
+    "Programming Language :: Python :: {{ cookiecutter.python_version }}",
 ]
 
 dependencies = [
     "ipykernel",
     "numpy",
     "pandas",
-    "toml>=0.10"
+    "toml>=0.10; python_version < '3.11'",
 ]
 
 [project.optional-dependencies]
-test = [
-    "flake8",
-    "tox>=3.25.1",
-    "pytest",
-    "pytest-cov[all]",
-    "mypy"
-]
+test = ["flake8", "tox>=3.25.1", "pytest", "pytest-cov[all]", "mypy"]
 
 [project.urls]
-homepage = "https://www.{{ cookiecutter.project_slug }}.org"  # TODO: change to actual homepage
-documentation = "https://readthedocs.org"  # TODO: change to actual documentation
-repository = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}"  # TODO: change to actual repository
+homepage = "https://www.{{ cookiecutter.project_slug }}.org"                                         # TODO: change to actual homepage
+documentation = "https://readthedocs.org"                                                            # TODO: change to actual documentation
+repository = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}" # TODO: change to actual repository
 # Consider other URLs: pre-registration, data repository, etc.
 
 # Entry points for the project
@@ -80,9 +74,7 @@ build-backend = "setuptools.build_meta"
 
 [tool.pytest.ini_options]
 #addopts = "--cov={{ cookiecutter.project_slug }}"
-testpaths = [
-    "code/tests",
-]
+testpaths = ["code/tests"]
 
 [tool.mypy]
 mypy_path = "code"
@@ -102,9 +94,7 @@ no_implicit_reexport = true
 data_file = "code/tests/.coverage"
 
 [tool.coverage.report]
-exclude_lines = [
-    "if __name__ == .__main__.:",
-]
+exclude_lines = ["if __name__ == .__main__.:"]
 
 [tool.coverage.html]
 directory = "code/tests/coverage_html_report"

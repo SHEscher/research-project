@@ -12,7 +12,13 @@ Author: Simon M. Hofmann | <[firstname].[lastname][at]pm.me> | 2023
 
 # %% Imports
 import os
-import toml  # since python 3.11, there is also tomllib
+import sys
+
+if sys.version_info >= (3, 11):
+    # since python 3.11, there is also tomllib
+    import tomllib as toml
+else:
+    import toml
 
 from pathlib import Path
 from typing import Any, Optional, Dict
@@ -44,7 +50,7 @@ class CONFIG:
             else:
                 str_out += f"'{val}'" if isinstance(val, str) else f"{val}"
 
-            str_out += (", " if ctn < len(list_attr) else "")
+            str_out += ", " if ctn < len(list_attr) else ""
         return str_out + ")"
 
     def update(self, new_configs: Dict[str, Any]):
@@ -84,7 +90,6 @@ class CONFIG:
             parent_path = str(Path(parent_path).absolute())
 
             for key, path in self.__dict__.items():
-
                 if isinstance(path, str) and not Path(path).is_absolute():
                     self.__dict__.update({key: str(Path(parent_path).joinpath(path))})
 
@@ -145,7 +150,11 @@ config = CONFIG()
 
 # Load config file(s)
 for config_file in Path(__file__).parent.glob("../configs/*config.toml"):
-    config.update(new_configs=toml.load(str(config_file)))
+    if sys.version_info >= (3, 11):
+        with open(config_file, "rb") as f:
+            config.update(new_configs=toml.load(f))
+    else:
+        config.update(new_configs=toml.load(str(config_file)))
 
 # Extract some useful globals
 PROJECT_NAME = config.PROJECT_NAME
