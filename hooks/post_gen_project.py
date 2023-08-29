@@ -58,6 +58,10 @@ if __name__ == '__main__':
         subprocess.run(["git", "init"], check=False)
     subprocess.run(["git", "add", "."], check=False)
     subprocess.run(["git", "commit", "-m", "Initial commit of {{ cookiecutter.project_slug }}"], check=False)
+    {% else %}
+    # Remove .gitingore file
+    # PROJECT_GITIGNORE.unlink()
+    pass
     {% endif %}
 
     print("\033[32m\n\nI am done creating the new research project in: %s\n\033[0m" % PROJECT_DIRECTORY)
