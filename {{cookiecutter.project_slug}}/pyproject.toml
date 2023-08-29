@@ -35,14 +35,16 @@ test = [
     {%- if cookiecutter.use_black == 'y' %}
     "black",
     {%- endif %}
-    "flake8",
+    {%- if cookiecutter.linting == 'ruff' %}
     "ruff",
+    {%- elif cookiecutter.linting == 'flake8' %}
+    "flake8",
+    {%- endif %}
     "tox>=3.25.1",
     {%- if cookiecutter.use_pytest == 'y' %}
     "pytest",
-    "pytest-cov[all]",
+    "pytest-cov",
     {%- endif %}
-    "mypy",
 ]
 
 [project.urls]
@@ -139,7 +141,7 @@ ignore = [
     # "E501", # ignore line-length
 ]
 line-length = 119 # Same as flake8 and black
-target-version = "py{{ cookiecutter.python_version.replace('.', '') }}"  # assume Python {{ cookiecutter.python_version }}
+target-version = "py{{ cookiecutter.python_version.replace('.', '') }}" # assume Python {{ cookiecutter.python_version }}
 
 {%- elif cookiecutter.linting == 'flake8' %}
 
