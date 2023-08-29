@@ -31,7 +31,19 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-test = ["flake8", "tox>=3.25.1", "pytest", "pytest-cov[all]", "mypy"]
+test = [
+    {%- if cookiecutter.use_black == 'y' %}
+    "black",
+    {%- endif %}
+    "flake8",
+    "ruff",
+    "tox>=3.25.1",
+    {%- if cookiecutter.use_pytest == 'y' %}
+    "pytest",
+    "pytest-cov[all]",
+    {%- endif %}
+    "mypy",
+]
 
 [project.urls]
 homepage = "https://www.{{ cookiecutter.project_slug }}.org"                                         # TODO: change to actual homepage
