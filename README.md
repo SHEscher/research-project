@@ -17,7 +17,6 @@ or with the cookiecutter wrapper [`treasure`](https://github.com/SHEscher/Treasu
 - [ ] Consider project install (as package) with older python/setuptools versions (pyproject.toml only not supported)
 - [ ] Optional: Add examples for other data types than MRI, including simulation studies
 - [ ] Optional: Add examples for other programming languages than Python
-- [ ] Consider adding [ruff](https://github.com/astral-sh/ruff) linter
 - [ ] ...
 
 ## Credits
