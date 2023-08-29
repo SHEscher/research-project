@@ -48,8 +48,8 @@ test = [
 ]
 
 [project.urls]
-homepage = "https://www.{{ cookiecutter.project_slug }}.org"                                         # TODO: change to actual homepage
-documentation = "https://readthedocs.org"                                                            # TODO: change to actual documentation
+homepage = "https://www.{{ cookiecutter.project_slug }}.org"  # TODO: change to actual homepage
+documentation = "https://readthedocs.org"  # TODO: change to actual documentation
 repository = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}" # TODO: change to actual repository
 # Consider other URLs: pre-registration, data repository, etc.
 
