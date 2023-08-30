@@ -18,7 +18,7 @@ pass
 # %% Functions  >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
 def main():
-    print(f"Access service x using my privat key: {config.service_x.api_key}")
+    print(f"Access service x using my private key: {config.service_x.api_key}")
     foo()
     print(f"{path_to.results.GLM}/{params.weight_decay}/")
 
