@@ -66,7 +66,7 @@ zip-safe = false
 [tool.setuptools.packages.find]
 where = ["code"]
 include = ["{{ cookiecutter.project_slug }}"]
-exclude = ["tests"]
+exclude = ["tests", "notebooks", "configs"]
 
 # Include non-python files in the package
 # [options.package_data]

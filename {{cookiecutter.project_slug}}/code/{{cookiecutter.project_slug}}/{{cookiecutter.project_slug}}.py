@@ -7,7 +7,7 @@ Years: {% now 'local', '%Y' %}
 """
 
 # %% Import
-from {{ cookiecutter.project_slug }}.configs import config, path_to, params
+from {{ cookiecutter.project_slug }}.configs import config, params, path_to
 from {{ cookiecutter.project_slug }}.preprocessing.freesurfer import foo
 
 
