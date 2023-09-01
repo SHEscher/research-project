@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 """Tests for `{{ cookiecutter.project_slug }}` package."""
 
 # %% Import
@@ -10,11 +9,11 @@ import unittest
 {%- endif %}
 from {{ cookiecutter.project_slug }} import {{ cookiecutter.project_slug }}
 
-# %% Set global vars & paths  >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
+# %% Set global vars & paths >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 pass
 
 
-# %% Test Functions  o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
+# %% Test Functions o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 {%- if cookiecutter.use_pytest == 'y' %}
 
 @pytest.fixture
@@ -46,3 +45,5 @@ class Test{{ cookiecutter.project_slug|title }}(unittest.TestCase):
     def test_000_something(self):
         """Test something."""
 {%- endif %}
+
+# o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o END

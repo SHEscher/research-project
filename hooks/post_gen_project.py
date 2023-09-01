@@ -9,7 +9,7 @@ import os
 from pathlib import Path
 import subprocess
 
-# %% Set global vars & paths  >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
+# %% Set global vars & paths >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 PROJECT_DIRECTORY = Path.cwd().resolve()  # os.path.realpath(os.path.curdir)
 PROJECT_GITIGNORE = PROJECT_DIRECTORY / ".gitignore"
 LINES_TO_ADD_TO_GITIGNORE = """# Bigger research folders
@@ -25,12 +25,11 @@ results/
 """
 
 
-# %% Functions  >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
-
+# %% Functions >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 pass
 
 
-# %% __main__ o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
+# %% __main__  >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
 if __name__ == '__main__':
 
@@ -70,4 +69,4 @@ if __name__ == '__main__':
         CONDA_ENV_NAME="{{ cookiecutter.project_slug[:4]}}_{{cookiecutter.python_version[:4] }}"
         print("\nTo activate the conda environment, run:\n\nconda activate %s\n" % CONDA_ENV_NAME)
 
-#  o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o END
+# o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o END

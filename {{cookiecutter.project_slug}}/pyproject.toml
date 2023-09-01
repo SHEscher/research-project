@@ -113,6 +113,14 @@ directory = "code/tests/coverage_html_report"
 {%- if cookiecutter.linting == 'ruff' %}
 
 [tool.ruff]
+select = [   # add rules
+    "I",  # sort imports
+    "RUF",  # ruff specific
+]
+src = [
+    "code/{{ cookiecutter.project_slug }}",
+    "code/tests",
+]
 # Exclude a variety of commonly ignored directories.
 exclude = [
     ".bzr",

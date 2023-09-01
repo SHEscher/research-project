@@ -7,7 +7,9 @@ Note:
 
 Alternatively, Configs could als be set using .env file together with python-dotenv package.
 
-Author: Simon M. Hofmann | <[firstname].[lastname][at]pm.me> | 2023
+Author: Simon M. Hofmann
+Contact: <[firstname].[lastname][at]pm.me>
+Years: 2023
 """
 
 # %% Imports
@@ -24,7 +26,7 @@ from pathlib import Path
 from typing import Any, Optional, Dict
 
 
-# %% Config class & functions >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
+# %% Config class & functions ><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
 class CONFIG:
     """Configuration object."""
@@ -143,7 +145,7 @@ def set_wd(new_dir: str) -> None:
         print("\033[91mGiven folder not found. Working dir remains:\t{Path.cwd()}\n\033[0m")  # red print
 
 
-# %% Setup configuration object << o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
+# %% Setup configuration object < o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
 # Instantiate config object
 config = CONFIG()
@@ -178,4 +180,4 @@ print("\n" + ("*"*95 + "\n")*2 + "\n" + "\t"*10 + PROJECT_NAME + "\n"*2 + ("*"*9
 # Set project working directory
 set_wd(PROJECT_ROOT)
 
-# <<<<<<<<<<< ooo >>>>>>>>>>>>>> ooo <<<<<<<<<<< ooo >>>>>>>>>>>>>> ooo <<<<<<<<<<< ooo >>>>>>>>>>>>>> END
+# o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o END
