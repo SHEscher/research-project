@@ -163,6 +163,11 @@ max-line-length = 119
 [tool.black]
 line-length = 119
 target-version = ["py{{ cookiecutter.python_version.replace('.', '') }}"]
+src = [
+    "code/{{ cookiecutter.project_slug }}",
+    "code/tests",
+    "code/notebooks",
+]
 
 {%- endif %}
 # preview = true
