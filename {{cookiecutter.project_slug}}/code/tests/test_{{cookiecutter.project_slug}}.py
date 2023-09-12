@@ -6,7 +6,7 @@
 import pytest
 {% else %}
 import unittest
-{%- endif %}
+{%- endif -%}
 from {{ cookiecutter.project_slug }} import {{ cookiecutter.project_slug }}
 
 # %% Set global vars & paths >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
@@ -33,7 +33,7 @@ def test_content(response):
     # assert 'GitHub' in BeautifulSoup(response.content).title.string
 
 
-{% else %}
+{% else -%}
 
 
 class Test{{ cookiecutter.project_slug|title }}(unittest.TestCase):

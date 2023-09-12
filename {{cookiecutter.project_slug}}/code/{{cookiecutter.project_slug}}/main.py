@@ -10,7 +10,6 @@ Years: {% now 'local', '%Y' %}
 from {{ cookiecutter.project_slug }}.configs import config, params, path_to
 from {{ cookiecutter.project_slug }}.preprocessing.freesurfer import foo
 
-
 # %% Set global vars & paths >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 pass
 

@@ -23,8 +23,7 @@ else:
     import toml
 
 from pathlib import Path
-from typing import Any, Optional, Dict
-
+from typing import Any, Dict, Optional
 
 # %% Config class & functions ><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
