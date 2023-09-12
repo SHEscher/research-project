@@ -33,7 +33,7 @@ def test_content(response):
     # assert 'GitHub' in BeautifulSoup(response.content).title.string
 
 
-{% else -%}
+{%- else %}
 
 
 class Test{{ cookiecutter.project_slug|title }}(unittest.TestCase):
