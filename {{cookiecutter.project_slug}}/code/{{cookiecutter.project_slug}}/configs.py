@@ -28,6 +28,7 @@ from typing import Any, Optional, Dict
 
 # %% Config class & functions ><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
+
 class CONFIG:
     """Configuration object."""
 
