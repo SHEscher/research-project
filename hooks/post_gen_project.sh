@@ -38,7 +38,7 @@ if command -v conda >/dev/null 2>&1; then
     # Install the project in editable mode
     # conda run -n ${CONDA_ENV_NAME} python -m pip install -e .  # this does not always work
     echo -e "\033[34m\nInstalling '{{ cookiecutter.project_slug }}' as python package in editable mode ...\n\033[0m"
-    ${CONDA_PREFIX}/bin/python -m pip install -e .[test]
+    ${CONDA_PREFIX}/bin/python -m pip install -e ".[test]"
     # We are already root folder of {{ cookiecutter.project_slug }} so . is enough
 
     # Add the new environment as kernel to jupyter (notebook and lab)

@@ -40,7 +40,7 @@ conda activate ${CONDA_ENV_NAME}
 Then install the code of the research project as python package:
 
 ```shell
-pip install -e .
+pip install -e ".[test]"
 ```
 
 Note: The `-e` flag installs the package in editable mode,
