@@ -33,7 +33,7 @@ dependencies = [
 [project.optional-dependencies]
 test = [
     {%- if cookiecutter.use_black == 'y' %}
-    "black",
+    "black[jupyter]",
     {%- endif %}
     {%- if cookiecutter.linting == 'ruff' %}
     "ruff",
@@ -108,22 +108,18 @@ data_file = "code/tests/.coverage"
 exclude_lines = ["if __name__ == .__main__.:"]
 
 [tool.coverage.html]
-
+directory = "code/tests/coverage_html_report"
 
 {%- if cookiecutter.linting == 'ruff' %}
 
-directory = "code/tests/coverage_html_report"
 [tool.ruff]
 select = [ # add rules
     "I",   # sort imports
     "RUF", # ruff specific
 ]
-src = ["code/{{ cookiecutter.project_slug }}", "code/tests"]
+src = ["code/{{ cookiecutter.project_slug }}", "code/notebooks", "code/tests"]
 # Exclude a variety of commonly ignored directories.
-
-
-{%- elif cookiecutter.linting == 'flake8' %}
-
+include = ["*.py", "*.pyi", "**/pyproject.toml", "*.ipynb"]
 exclude = [
     ".bzr",
     ".direnv",
@@ -152,22 +148,30 @@ ignore = [
 ]
 line-length = 119 # Same as flake8 and black
 target-version = "py{{ cookiecutter.python_version.replace('.', '') }}" # assume Python {{ cookiecutter.python_version }}
-[tool.flake8]
 
+{%- elif cookiecutter.linting == 'flake8' %}
+
+[tool.flake8]
+max-line-length = 119
 
 {%- endif %}
 
 {%- if cookiecutter.use_black == 'y' %}
 
-max-line-length = 119
 [tool.black]
 line-length = 119
 target-version = ["py{{ cookiecutter.python_version.replace('.', '') }}"]
-src = [
-    "code/{{ cookiecutter.project_slug }}",
-    "code/tests",
-    "code/notebooks",
-]
+src = ["code/{{ cookiecutter.project_slug }}", "code/notebooks", "code/tests"]
+exclude = '''  # A regex preceded with ^/ will apply only to files and directories in the root of the project.
+(
+  ^/code/congifs
+  | ^/data
+  | ^/literature
+  | ^/organisation
+  | ^/publications/
+  | ^/results
+)
+'''
+# preview = true
 
 {%- endif %}
-# preview = true
