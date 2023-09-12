@@ -16,6 +16,7 @@ pass
 # %% Test Functions o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 {%- if cookiecutter.use_pytest == 'y' %}
 
+
 @pytest.fixture
 def response():
     """Sample pytest fixture.
@@ -31,7 +32,9 @@ def test_content(response):
     # from bs4 import BeautifulSoup
     # assert 'GitHub' in BeautifulSoup(response.content).title.string
 
-{%- else %}
+
+{% else %}
+
 
 class Test{{ cookiecutter.project_slug|title }}(unittest.TestCase):
     """Tests for `{{ cookiecutter.project_slug }}` package."""

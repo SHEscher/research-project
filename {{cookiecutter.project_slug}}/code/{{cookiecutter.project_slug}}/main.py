@@ -17,6 +17,7 @@ pass
 
 # %% Functions >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
+
 def main():
     print(f"Access service x using my private key: {config.service_x.api_key}")
     foo()

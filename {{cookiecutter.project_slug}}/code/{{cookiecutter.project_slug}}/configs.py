@@ -108,8 +108,9 @@ def set_wd(new_dir: str) -> None:
 
     :param new_dir: name of new working directory (must be in project folder)
     """
-    assert PROJECT_NAME in str(Path.cwd()), \
-        f'Current working dir "{Path.cwd()}" is outside of project "{PROJECT_NAME}".'
+    assert PROJECT_NAME in str(
+        Path.cwd()
+    ), f"Current working dir '{Path.cwd()}' is outside of project '{PROJECT_NAME}'."
 
     print("\033[94m" + f"Current working dir:\t{Path.cwd()}" + "\033[0m")  # print blue
 
@@ -165,7 +166,7 @@ PROJECT_NAME = config.PROJECT_NAME
 if hasattr(config.paths, "PROJECT_ROOT"):
     PROJECT_ROOT = config.paths.PROJECT_ROOT
 else:
-    PROJECT_ROOT = __file__[:__file__.find(PROJECT_NAME) + len(PROJECT_NAME)]
+    PROJECT_ROOT = __file__[: __file__.find(PROJECT_NAME) + len(PROJECT_NAME)]
     # Set root path to config file & update paths
     config.paths.PROJECT_ROOT = PROJECT_ROOT
     config.paths.update_paths()
@@ -175,7 +176,7 @@ path_to = config.paths
 params = config.params
 
 # Welcome
-print("\n" + ("*"*95 + "\n")*2 + "\n" + "\t"*10 + PROJECT_NAME + "\n"*2 + ("*"*95 + "\n")*2)
+print("\n" + ("*" * 95 + "\n") * 2 + "\n" + "\t" * 10 + PROJECT_NAME + "\n" * 2 + ("*" * 95 + "\n") * 2)
 
 # Set project working directory
 set_wd(PROJECT_ROOT)
