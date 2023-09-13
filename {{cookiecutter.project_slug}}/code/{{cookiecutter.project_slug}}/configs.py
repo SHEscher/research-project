@@ -2,6 +2,7 @@
 Configuration for {{ cookiecutter.project_name }} project
 
 Note:
+----
     * store private configs in the same folder as 'config.toml', namely: "./[PRIVATE_PREFIX]_configs.toml"
     * keep the prefix, such that it is ignored by git
 
@@ -10,6 +11,7 @@ Alternatively, Configs could als be set using .env file together with python-dot
 Author: Simon M. Hofmann
 Contact: <[firstname].[lastname][at]pm.me>
 Years: 2023
+
 """
 
 # %% Imports
@@ -23,7 +25,7 @@ else:
     import toml
 
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any
 
 # %% Config class & functions ><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
@@ -31,7 +33,7 @@ from typing import Any, Dict, Optional
 class CONFIG:
     """Configuration object."""
 
-    def __init__(self, config_dict: Optional[dict] = None):
+    def __init__(self, config_dict: dict | None = None):
         """Initialise CONFIG class object."""
         if config_dict is not None:
             self.update(config_dict)
@@ -39,7 +41,7 @@ class CONFIG:
     def __repr__(self):
         """Implement __repr__ of CONFIG."""
         str_out = "CONFIG("
-        list_attr = [k for k in self.__dict__.keys() if not k.startswith("_")]
+        list_attr = [k for k in self.__dict__ if not k.startswith("_")]
         ctn = 0  # counter for visible attributes only
         for key, val in self.__dict__.items():
             if key.startswith("_"):
@@ -55,10 +57,10 @@ class CONFIG:
             str_out += ", " if ctn < len(list_attr) else ""
         return str_out + ")"
 
-    def update(self, new_configs: Dict[str, Any]):
+    def update(self, new_configs: dict[str, Any]):
         """Update config object with new entries."""
         for k, val in new_configs.items():
-            if isinstance(val, (list, tuple)):
+            if isinstance(val, list | tuple):
                 setattr(self, k, [CONFIG(x) if isinstance(x, dict) else x for x in val])
             else:
                 setattr(self, k, CONFIG(val) if isinstance(val, dict) else val)
@@ -73,7 +75,7 @@ class CONFIG:
                 print("\t" * indent + f"{key}: " + (f"'{val}'" if isinstance(val, str) else f"{val}"))
 
     def asdict(self):
-        """Converts config object to dict."""
+        """Convert config object to dict."""
         dict_out = {}
         for key, val in self.__dict__.items():
             if isinstance(val, CONFIG):
@@ -82,9 +84,8 @@ class CONFIG:
                 dict_out.update({key: val})
         return dict_out
 
-    def update_paths(self, parent_path: Optional[str] = None):
+    def update_paths(self, parent_path: str | None = None):
         """Update relative paths to PROJECT_ROOT dir."""
-
         # Use project root dir as parent path if not specified
         parent_path = self.PROJECT_ROOT if hasattr(self, "PROJECT_ROOT") else parent_path
 
@@ -102,31 +103,32 @@ class CONFIG:
             print("Paths can't be converted to absolute paths, since no PROJECT_ROOT is found!")
 
 
-def set_wd(new_dir: str) -> None:
+def set_wd(new_dir: str | Path) -> None:
     """
     Set given directory as new working directory of the project.
 
     :param new_dir: name of new working directory (must be in project folder)
     """
-    assert PROJECT_NAME in str(
-        Path.cwd()
-    ), f"Current working dir '{Path.cwd()}' is outside of project '{PROJECT_NAME}'."
+    if PROJECT_NAME not in str(Path.cwd()):
+        msg = f"Current working dir '{Path.cwd()}' is outside of project '{PROJECT_NAME}'."
+        raise OSError(msg)
 
     print("\033[94m" + f"Current working dir:\t{Path.cwd()}" + "\033[0m")  # print blue
 
     # Check if new_dir is folder path or just folder name
     change_dir = False
-    if os.path.isabs(new_dir):
-        found = Path(new_dir).is_dir()
-        change_dir = Path(new_dir).absolute() != Path.cwd()
+    new_dir = Path(new_dir)
+    if new_dir.is_absolute():
+        found = new_dir.is_dir()
+        change_dir = new_dir.absolute() != Path.cwd()
         if found and change_dir:
             os.chdir(new_dir)
 
     else:
         # Remove '/' if new_dir == 'folder/' OR '/folder'
-        new_dir = "".join(new_dir.split("/"))
+        new_dir = "".join(str(new_dir).split("/"))
 
-        found = new_dir == Path.cwd().name
+        found = str(new_dir) == Path.cwd().name
         change_dir = not found
 
         # First look down the tree
@@ -154,7 +156,7 @@ config = CONFIG()
 # Load config file(s)
 for config_file in Path(__file__).parent.glob("../configs/*config.toml"):
     if sys.version_info >= (3, 11):
-        with open(config_file, "rb") as f:
+        with config_file.open("rb") as f:
             config.update(new_configs=toml.load(f))
     else:
         config.update(new_configs=toml.load(str(config_file)))

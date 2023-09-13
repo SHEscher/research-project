@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """Tests for `{{ cookiecutter.project_slug }}` package."""
 
 # %% Import
@@ -17,9 +16,10 @@ pass
 {%- if cookiecutter.use_pytest == 'y' %}
 
 
-@pytest.fixture
+@pytest.fixture()
 def response():
-    """Sample pytest fixture.
+    """
+    Sample pytest fixture.
 
     See more at: https://doc.pytest.org/en/latest/fixture.html
     """
@@ -33,7 +33,7 @@ def test_content(response):
     # assert 'GitHub' in BeautifulSoup(response.content).title.string
 
 
-{%- else %}
+{% else %}
 
 
 class Test{{ cookiecutter.project_slug|title }}(unittest.TestCase):
@@ -47,6 +47,7 @@ class Test{{ cookiecutter.project_slug|title }}(unittest.TestCase):
 
     def test_000_something(self):
         """Test something."""
-{%- endif %}
 
+
+{% endif -%}
 # o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o END

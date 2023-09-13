@@ -1,5 +1,5 @@
 """
-Main module for {{ cookiecutter.project_slug }}
+Main module for {{ cookiecutter.project_slug }}.
 
 Author: {{ cookiecutter.full_name }}
 Contact: {{ cookiecutter.email }}
@@ -18,6 +18,7 @@ pass
 
 
 def main():
+    """Run the main."""
     print(f"Access service x using my private key: {config.service_x.api_key}")
     foo()
     print(f"{path_to.results.GLM}/{params.weight_decay}/")

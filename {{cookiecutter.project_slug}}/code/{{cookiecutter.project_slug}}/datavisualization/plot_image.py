@@ -1,5 +1,5 @@
 """
-Plotting function for {{ cookiecutter.project_slug }}
+Plotting function for {{ cookiecutter.project_slug }}.
 
 Author: {{ cookiecutter.full_name }}
 Contact: {{ cookiecutter.email }}

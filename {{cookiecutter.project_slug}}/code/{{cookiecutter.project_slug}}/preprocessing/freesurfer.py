@@ -1,5 +1,5 @@
 """
-Freesurfer preprocessing for {{ cookiecutter.project_slug }}
+Freesurfer preprocessing for {{ cookiecutter.project_slug }}.
 
 Author: {{ cookiecutter.full_name }}
 Contact: {{ cookiecutter.email }}
@@ -18,6 +18,7 @@ pass
 
 
 def foo():
+    """Run the foo."""
     print("Do something!")
 
 

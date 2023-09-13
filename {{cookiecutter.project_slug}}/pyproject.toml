@@ -193,8 +193,9 @@ format = "text"  # try out : "grouped"
 preview = false  # true: Ruff will use unstable rules and fixes
 
 [tool.ruff.extend-per-file-ignores]
-"code/tests/*.py" = ["S101"]  # ignore assert statements in tests
 "__init__.py" = ["F401", "D104"]
+"code/notebooks/*.ipynb" = ["D100"]  # ignore docs in notebooks
+"code/tests/*.py" = ["S101"]  # ignore assert statements in tests
 
 [tool.ruff.flake8-annotations]
 allow-star-arg-any = true
