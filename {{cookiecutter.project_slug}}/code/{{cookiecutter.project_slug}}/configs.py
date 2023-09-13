@@ -1,5 +1,5 @@
 """
-Configuration for {{ cookiecutter.project_name }} project
+Configuration for {{ cookiecutter.project_name }} project.
 
 Note:
 ----
