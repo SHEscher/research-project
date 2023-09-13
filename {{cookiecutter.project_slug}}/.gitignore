@@ -111,3 +111,5 @@ ENV/
 
 # R
 .Rproj.user/
+.Rhistory
+*.Rproj

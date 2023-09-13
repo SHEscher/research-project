@@ -23,6 +23,15 @@ Contact:   {{ cookiecutter.email }}
 
 *Refer to the corresponding code/scripts written for the analysis. Which languages (Python, R Matlab, ...) where used? Are there specific package versions, which one should take care of? Or is there a container (e.g., Docker) or virtual environment?*
 
+### Python
+Pyhton code (in the structure of a python package) is stored in `./code/{{ cookiecutter.project_slug }}/`
+
+#### Jupyter Notebooks
+Jupyter notebooks are stored in `./code/notebooks/`
+
+### R
+*Initialize a new R-project in the project root `.` with `RStudio`. R-scripts can be stored in `./code/Rscripts/`*
+
 ### Configs
 
 Paths to data, parameter settings, etc. are stored in the config file: `./code/configs/config.toml`
@@ -44,6 +53,8 @@ weight_decay = config.params.weight_decay
 # Get private parameter from config
 api_key = config.service_x.api_key
 ```
+
+For other programming languages, and corresponding script must be implemented.
 
 ## COPYRIGHT/LICENSE
 

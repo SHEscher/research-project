@@ -106,6 +106,8 @@ cookiecutter-pypackage-env/
 
 # R
 .Rproj.user/
+.Rhistory
+*.Rproj
 
 # IDE settings
 .vscode/

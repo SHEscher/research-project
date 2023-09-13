@@ -48,6 +48,11 @@ i.e., changes to the code will be directly reflected in the installed package.
 Moreover, the code keeps its access to the research data in the underlying folder structure.
 Thus, the `-e` flag is recommended to use.
 
+R-projects should be initialized in the project root `.` with `RStudio` as *existing directory*.
+Corresponding R-scripts can be stored in `./code/Rscripts/`
+
+Similarly, use this structure for Matlab or other programming languages, which are employed in this project.
+
 ## Publications
 
 *List resulted publications of this project here (including papers, posters, talks, ...)*
