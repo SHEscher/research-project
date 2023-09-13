@@ -113,41 +113,117 @@ directory = "code/tests/coverage_html_report"
 {%- if cookiecutter.linting == 'ruff' %}
 
 [tool.ruff]
-select = [ # add rules
-    "I",   # sort imports
-    "RUF", # ruff specific
+select = [   # add /comment-out rules (list below does not contain all rulles)
+    # "ALL",  # all rules
+    "D",  # pydocstyle
+    "E", # pycodestyle [default]
+    "F",  # Pyflakes [default]
+    "I",  # isort imports
+    "RUF",  # ruff specific
+    "UP",  # pyupgrade [default]
+    "W",  # pycodestyle: warning
+    "C90", # mccabe
+    "N", # pep8-naming
+    # "ANN", # flake8-annotations
+    "S", # flake8-bandit
+    "BLE", # flake8-blind-except
+    "B", # flake8-bugbear
+    "A", # flake8-builtins
+    "COM", # flake8-commas
+    "C4", # flake8-comprehensions
+    # "EM", # flake8-errmsg
+    # "FA", # flake8-future-annotations
+    "ISC", # flake8-implicit-str-concat
+    # "ICN", # flake8-import-conventions
+    "G", # flake8-logging-format
+    "INP", # flake8-no-pep420
+    {%- if cookiecutter.use_pytest == 'y' %}
+    "PT", # flake8-pytest-style
+    {%- endif %}
+    "Q", # flake8-quotes
+    "RET", # flake8-return
+    "SIM", # flake8-simplify
+    "TCH", # flake8-type-checking
+    "ARG", # flake8-unused-arguments
+    "PTH", # flake8-use-pathlib
+    "TD", # flake8-todos
+    "FIX", # flake8-fixme
+    "ERA", # eradicate
+    "PD", # pandas-vet
+    "PL", # Pylint
+    "NPY", # NumPy-specific rules
+]  # run `ruff linter` to see all rules
+fix = false  # true: Ruff will try to fix errors
+unfixable = [  # list of rules to consider non-autofix-able.
+    "ERA001",  # found commented-out code
+    "F401",  # unused imports
+    # "RUF100",  # `noqa` directives that are no longer applicable
 ]
+ignore = [
+    "ANN101",  # flake8-annotations: Missing type annotation for self in method
+    "ANN102",  # flake8-annotations: Missing type annotation for cls in classmethod
+    "ANN401",  # flake8-annotations: Any
+    "COM812",  # Trailing comma missing
+    "D203",  # 1 blank line required before class docstring: incompatible with D211 (=no blank line required)
+    "D212",   # multi-line-summary-first-line incompatible with D213 (=should start at second line)
+    "DTZ005",  # timezone-naive datetime
+    "E402",  # Module level import not at top of file (covert by ISORT)
+    # "E501",  # Ignore line-length since we use 119
+    # "ERA001", # Found commented-out code
+    "S301",  # suspicious-pickle-usage
+    "TD002",  # Missing author in To-Do
+    "TD003",  # Missing issue link on the line following a To-Do
+]
+ignore-init-module-imports = true  # void automatically removing unused imports in __init__.py
+respect-gitignore = true  # default: true
 src = ["code/{{ cookiecutter.project_slug }}", "code/notebooks", "code/tests"]
 # Exclude a variety of commonly ignored directories.
 include = ["*.py", "*.pyi", "**/pyproject.toml", "*.ipynb"]
-exclude = [
-    ".bzr",
-    ".direnv",
-    ".eggs",
-    ".git",
-    ".git-rewrite",
-    ".hg",
-    ".mypy_cache",
-    ".nox",
-    ".pants.d",
-    ".pytype",
-    ".ruff_cache",
-    ".svn",
-    ".tox",
-    ".venv",
-    "__pypackages__",
-    "_build",
-    "buck-out",
-    "build",
-    "dist",
-    "node_modules",
-    "venv",
-]
-ignore = [
-    # "E501", # ignore line-length
+extend-exclude = [
+    "code/congifs",
+    "data",
+    "literature",
+    "organisation",
+    "publications",
+    "results"
 ]
 line-length = 119 # Same as flake8 and black
 target-version = "py{{ cookiecutter.python_version.replace('.', '') }}" # assume Python {{ cookiecutter.python_version }}
+format = "text"  # try out : "grouped"
+preview = false  # true: Ruff will use unstable rules and fixes
+
+[tool.ruff.extend-per-file-ignores]
+"code/tests/*.py" = ["S101"]  # ignore assert statements in tests
+"__init__.py" = ["F401", "D104"]
+
+[tool.ruff.flake8-annotations]
+allow-star-arg-any = true
+ignore-fully-untyped = true
+suppress-none-returning = true
+
+[tool.ruff.flake8-comprehensions]
+allow-dict-calls-with-keyword-arguments = true
+
+[tool.ruff.isort]
+known-local-folder = ["code/{{ cookiecutter.project_slug }}"]
+# known-first-party = ...
+
+[tool.ruff.mccabe]
+# Flag errors (`C901`) whenever the complexity level exceeds x.
+max-complexity = 10  # default x: 10
+
+[tool.ruff.pep8-naming]
+ignore-names = []  # fill with specific class, function, variable names
+
+[tool.ruff.pydocstyle]
+# convention = "google"  # "numpy", "pep257"
+
+[tool.ruff.pylint]
+max-args = 5  # default: 5
+max-branches = 12  # default: 12
+max-returns = 6  # default: 6
+max-statements = 50  # default: 50
+# allow-magic-value-types = ["int"]
 
 {%- elif cookiecutter.linting == 'flake8' %}
 
@@ -162,13 +238,14 @@ max-line-length = 119
 line-length = 119
 target-version = ["py{{ cookiecutter.python_version.replace('.', '') }}"]
 src = ["code/{{ cookiecutter.project_slug }}", "code/notebooks", "code/tests"]
+include = '\.pyi?$'
 exclude = '''  # A regex preceded with ^/ will apply only to files and directories in the root of the project.
 (
   ^/code/congifs
   | ^/data
   | ^/literature
   | ^/organisation
-  | ^/publications/
+  | ^/publications
   | ^/results
 )
 '''
