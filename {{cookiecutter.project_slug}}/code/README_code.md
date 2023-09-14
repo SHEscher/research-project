@@ -30,7 +30,8 @@ Pyhton code (in the structure of a python package) is stored in `./code/{{ cooki
 Jupyter notebooks are stored in `./code/notebooks/`
 
 ### R
-*Initialize a new R-project in the project root `.` with `RStudio`. R-scripts can be stored in `./code/Rscripts/`*
+*Initialize a new R-project in the project root of `{{ cookiecutter.project_slug }}` with `RStudio`. R-scripts can be stored in `./code/Rscripts/`.
+Use R-packages in Python with, e.g., [rpy2](https://rpy2.github.io/), or use Python packages in R using, e.g., [reticulate](https://rstudio.github.io/reticulate/)*.
 
 ### Configs
 
