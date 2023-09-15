@@ -194,7 +194,7 @@ preview = false  # true: Ruff will use unstable rules and fixes
 
 [tool.ruff.extend-per-file-ignores]
 "__init__.py" = ["F401", "D104"]
-"code/notebooks/*.ipynb" = ["D100"]  # ignore docs in notebooks
+"*.ipynb" = ["D100"]  # ignore docsstring in notebooks
 "code/tests/*.py" = ["S101"]  # ignore assert statements in tests
 
 [tool.ruff.flake8-annotations]
@@ -248,6 +248,7 @@ exclude = '''  # A regex preceded with ^/ will apply only to files and directori
   | ^/organisation
   | ^/publications
   | ^/results
+  | ^/.*/
 )
 '''
 # preview = true
