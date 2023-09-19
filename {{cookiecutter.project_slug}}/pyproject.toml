@@ -2,7 +2,7 @@
 [project]
 name = "{{ cookiecutter.project_name }}"
 version = "{{ cookiecutter.version }}"
-description = "Run and analyse the {{ cookiecutter.project_name }} study ({% now 'local', '%Y' %})"
+description = "{{ cookiecutter.project_short_description.rstrip(".") }}."
 readme = "README.md"
 requires-python = ">={{ cookiecutter.python_version }}"
 license = { file = "LICENSE" }
