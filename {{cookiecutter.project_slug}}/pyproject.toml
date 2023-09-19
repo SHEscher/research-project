@@ -248,7 +248,7 @@ exclude = '''  # A regex preceded with ^/ will apply only to files and directori
   | ^/organisation
   | ^/publications
   | ^/results
-  | ^/.*/
+  | ^/\..*/*  # ignore files in hidden directories
 )
 '''
 # preview = true
