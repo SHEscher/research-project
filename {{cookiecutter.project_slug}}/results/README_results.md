@@ -3,11 +3,11 @@
 `[Last update: {% now 'local', '%B %e, %Y' %}]`
 
 ***
-Period: {% now 'local', '%Y-%m' %} - ... <br>
-Status: in preparation / work in progress / finalized
+    Period: {% now 'local', '%Y-%m' %} - ...
+    Status: in preparation / work in progress / finalized
 
-Author(s): {{ cookiecutter.full_name }} <br>
-Contact:   {{ cookiecutter.email }}
+    Author(s): {{ cookiecutter.full_name }}
+    Contact:   {{ cookiecutter.email }}
 
 ***
 
