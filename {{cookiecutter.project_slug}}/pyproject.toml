@@ -169,7 +169,7 @@ ignore = [
     "DTZ005",  # timezone-naive datetime
     "E402",  # Module level import not at top of file (covert by ISORT)
     # "E501",  # Ignore line-length since we use 119
-    # "ERA001", # Found commented-out code
+    # "ERA001",  # Found commented-out code
     "S301",  # suspicious-pickle-usage
     "TD002",  # Missing author in To-Do
     "TD003",  # Missing issue link on the line following a To-Do
@@ -185,7 +185,7 @@ extend-exclude = [
     "literature",
     "organisation",
     "publications",
-    "results"
+    "results",
 ]
 line-length = 119 # Same as flake8 and black
 target-version = "py{{ cookiecutter.python_version.replace('.', '') }}" # assume Python {{ cookiecutter.python_version }}
@@ -228,6 +228,7 @@ max-statements = 50  # default: 50
 
 {%- elif cookiecutter.linting == 'flake8' %}
 
+# allow-magic-value-types = ["int"]
 [tool.flake8]
 max-line-length = 119
 
@@ -239,7 +240,7 @@ max-line-length = 119
 line-length = 119
 target-version = ["py{{ cookiecutter.python_version.replace('.', '') }}"]
 src = ["code/{{ cookiecutter.project_slug }}", "code/notebooks", "code/tests"]
-include = '\.pyi?$'
+include = '(\.pyi?|\.ipynb)$'
 exclude = '''  # A regex preceded with ^/ will apply only to files and directories in the root of the project.
 (
   ^/code/congifs
@@ -248,7 +249,7 @@ exclude = '''  # A regex preceded with ^/ will apply only to files and directori
   | ^/organisation
   | ^/publications
   | ^/results
-  | ^/\..*/*  # ignore files in hidden directories
+  | /*/\..*  # ignore files in hidden directories
 )
 '''
 # preview = true
