@@ -1,3 +1,8 @@
+# Consider to ignore specific file types unique to your project
+# *.png
+# *.nii
+# or others
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

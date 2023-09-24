@@ -3,21 +3,15 @@
 `[Last update: {% now 'local', '%B %e, %Y' %}]`
 
 ***
-    Period: {% now 'local', '%Y-%m' %} - ...
-    Status: in preparation / work in progress / finalized
+    Period:     {% now 'local', '%Y-%m' %} - ...
+    Status:     in preparation / work in progress / finalized
 
-    Author(s): {{ cookiecutter.full_name }}
-    Contact:   {{ cookiecutter.email }}
+    Author(s):  {{ cookiecutter.full_name }}
+    Contact:    {{ cookiecutter.email }}
 
 ***
 
-*In general, one can add README's in nearly every folder. The guiding principle should always be that any person who is not familiar with the project can find their way exclusively via the README's – 'It may be you one day'*
-
-Check out the following resources.
-
-* https://www.makeareadme.com
-
-* [The Simple Dublin Core Generator!](https://nsteffel.github.io/dublin_core_generator/generator_nq.html)
+*In general, one can add README's in nearly every folder. The guiding principle should always be that any person who is not familiar with the project can find their way exclusively via the README's – 'This may be you one day'*
 
 ## Project description
 
@@ -29,27 +23,30 @@ Check out the following resources.
 
 ## Install research code as package
 
-In case, there is no virtual / conda environment yet:
+In case, there is no virtual / conda environment yet, create one for the research project:
 
 ```shell
-CONDA_ENV_NAME="{{ cookiecutter.project_slug[:4]}}_{{cookiecutter.python_version[:4] }}"
-conda create -n ${CONDA_ENV_NAME} python={{ cookiecutter.python_version }}
-conda activate ${CONDA_ENV_NAME}
+conda create -n {{ cookiecutter.project_slug[:4]}}_{{cookiecutter.python_version[:4] }} python={{ cookiecutter.python_version }}
+```
+And activate it:
+```shell
+conda activate {{ cookiecutter.project_slug[:4]}}_{{cookiecutter.python_version[:4] }}
 ```
 
 Then install the code of the research project as python package:
 
 ```shell
+# assuming your current working dircetory is the project root
 pip install -e ".[test]"
 ```
 
-Note: The `-e` flag installs the package in editable mode,
+**Note**: The `-e` flag installs the package in editable mode,
 i.e., changes to the code will be directly reflected in the installed package.
 Moreover, the code keeps its access to the research data in the underlying folder structure.
 Thus, the `-e` flag is recommended to use.
 
-R-projects should be initialized in the project root `.` with `RStudio` as *existing directory*.
-Corresponding R-scripts can be stored in `./code/Rscripts/`
+*R*-projects should be initialized in the project root `.` with, e.g., `RStudio` as *existing directory*.
+Corresponding *R*-scripts can be stored in `./code/Rscripts/`
 
 Similarly, use this structure for Matlab or other programming languages, which are employed in this project.
 

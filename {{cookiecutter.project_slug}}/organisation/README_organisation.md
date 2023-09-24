@@ -3,17 +3,23 @@
 `[Last update: {% now 'local', '%B %e, %Y' %}]`
 
 ***
-    Period: {% now 'local', '%Y-%m' %} - ...
-    Status: in preparation / work in progress / finalized
+    Period:     {% now 'local', '%Y-%m' %} - ...
+    Status:     in preparation / work in progress / finalized
 
-    Author(s): {{ cookiecutter.full_name }}
-    Contact:   {{ cookiecutter.email }}
+    Author(s):  {{ cookiecutter.full_name }}
+    Contact:    {{ cookiecutter.email }}
 
 ***
 
 ## Important organisational aspects of the project
 
 *List relevant information one needs to know about the project organisation.*
+
+### Ethics
+*Mention (approved) ethics.*
+
+### Preregistration
+*Link to preregistration (if applicable).*
 
 ## What to find in this folder
 

@@ -3,11 +3,11 @@
 `[Last update: {% now 'local', '%B %e, %Y' %}]`
 
 ***
-    Period: {% now 'local', '%Y-%m' %} - ...
-    Status: in preparation / work in progress / finalized
+    Period:     {% now 'local', '%Y-%m' %} - ...
+    Status:     in preparation / work in progress / finalized
 
-    Author(s): {{ cookiecutter.full_name }}
-    Contact:   {{ cookiecutter.email }}
+    Author(s):  {{ cookiecutter.full_name }}
+    Contact:    {{ cookiecutter.email }}
 
 ***
 
@@ -19,7 +19,7 @@
 
 ## Data visualization
 
-*What plots were created to provide general insights to the data. Where are they to find. For instance, these could be distributions over acquired variables, some descriptive statistics and others...*
+*What plots were created to provide general insights to the data. Where are they to find. For instance, these could be distributions over acquired variables, some descriptive statistics and others ...*
 
 ## Computational model
 
