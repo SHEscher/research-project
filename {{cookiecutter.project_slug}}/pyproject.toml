@@ -192,7 +192,7 @@ extend-exclude = [
 ]
 line-length = 119 # Same as flake8 and black
 target-version = "py{{ cookiecutter.python_version.replace('.', '') }}" # assume Python {{ cookiecutter.python_version }}
-format = "text"  # try out : "grouped"
+output-format = "text"  # try out : "grouped"
 preview = false  # true: Ruff will use unstable rules and fixes
 
 [tool.ruff.extend-per-file-ignores]
