@@ -11,10 +11,8 @@ or with the cookiecutter wrapper [`treasure`](https://github.com/SHEscher/Treasu
 
 ## TODO's
 
-- [ ] Remove .gitignore in case the git option is not selected OR provide option to keep it for later init of a git repo
 - [ ] Option to add multiple authors
 - [ ] Option to add project keywords
-- [ ] Consider project install (as package) with older python/setuptools versions (where pyproject.toml-only is not supported)
 - [ ] Optional: Add examples for other data types than MRI, including simulation studies
 - [ ] ...
 
