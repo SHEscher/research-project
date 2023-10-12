@@ -12,10 +12,6 @@ MODULE_REGEX = r'^[_a-zA-Z][_a-zA-Z0-9]+$'
 module_name = '{{ cookiecutter.project_slug }}'
 
 
-# %% Functions >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
-pass
-
-
 # %% __main__  >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
 if __name__ == '__main__':
