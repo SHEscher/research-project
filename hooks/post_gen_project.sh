@@ -2,7 +2,25 @@
 
 # Create a new conda environment and activate it
 {% if cookiecutter.create_conda_env == 'y' -%}
-CONDA_ENV_NAME="{{ cookiecutter.project_slug[:4]}}_{{cookiecutter.python_version[:4] }}"
+
+# Define the base environment name
+BASE_CONDA_ENV_NAME="{{ cookiecutter.project_slug[:4]}}_{{cookiecutter.python_version[:4] }}"
+
+# Initialize the counter
+counter=0
+
+# Generate the initial environment name
+CONDA_ENV_NAME="${BASE_CONDA_ENV_NAME}"
+# Loop until no matching environment name is found
+while conda env list | grep -q -w "$CONDA_ENV_NAME"; do
+    # Append the counter to the environment name
+    if [ $counter -gt 0 ]; then
+        echo "The conda environment name '$CONDA_ENV_NAME' does already exist. Adapting the name ..."
+        CONDA_ENV_NAME="${BASE_CONDA_ENV_NAME}_${counter}"
+    fi
+    counter=$((counter + 1))
+done
+
 echo -e "\033[34mCreating and activating conda environment ${CONDA_ENV_NAME} ...\n\033[0m"
 # Check if conda is available
 if command -v conda >/dev/null 2>&1; then
