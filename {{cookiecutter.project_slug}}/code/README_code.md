@@ -62,7 +62,7 @@ weight_decay = config.params.weight_decay
 # Get private parameter from config
 api_key = config.service_x.api_key
 ```
-*Fill the cooresponding `*config.toml` files with your data.*
+*Fill the corresponding `*config.toml` files with your data.*
 
 For other programming languages, corresponding scripts must be implemented to use these `*config.toml` files in a simliar way.
 
