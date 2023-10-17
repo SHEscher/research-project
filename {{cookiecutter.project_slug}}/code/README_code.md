@@ -64,7 +64,7 @@ api_key = config.service_x.api_key
 ```
 *Fill the corresponding `*config.toml` files with your data.*
 
-For other programming languages, corresponding scripts must be implemented to use these `*config.toml` files in a simliar way.
+For other programming languages, corresponding scripts must be implemented to use these `*config.toml` files in a similar way.
 
 ## COPYRIGHT/LICENSE
 
