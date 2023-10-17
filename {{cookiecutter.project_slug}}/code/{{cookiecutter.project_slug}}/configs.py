@@ -15,6 +15,8 @@ Years: 2023
 """
 
 # %% Imports
+from __future__ import annotations
+
 import os
 import sys
 
@@ -60,7 +62,7 @@ class _CONFIG:
     def update(self, new_configs: dict[str, Any]):
         """Update config object with new entries."""
         for k, val in new_configs.items():
-            if isinstance(val, list | tuple):
+            if isinstance(val, (list, tuple)):
                 setattr(self, k, [_CONFIG(x) if isinstance(x, dict) else x for x in val])
             else:
                 setattr(self, k, _CONFIG(val) if isinstance(val, dict) else val)
