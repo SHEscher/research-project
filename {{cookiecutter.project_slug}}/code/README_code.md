@@ -25,7 +25,7 @@ One could add here more implementation-specific information (e.g., which toolbox
 ## Codebase
 
 *Refer to the corresponding code/scripts written for the analysis/simulation/etc.
-Which languages (Python, R Matlab, ...) were used? Are there specific package versions,
+Which languages (Python, R, Matlab, ...) were used? Are there specific package versions,
 which one should take care of? Or is there a container (e.g., Docker) or virtual environment?*
 
 ### Python
