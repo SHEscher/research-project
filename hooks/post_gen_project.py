@@ -19,7 +19,7 @@ organisation/
 publications/
 results/
 
-# Private configs in ./code/confings/
+# Private configs in ./code/configs/
 *_config.toml
 
 """
