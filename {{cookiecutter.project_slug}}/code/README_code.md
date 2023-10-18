@@ -61,6 +61,9 @@ To use your configs in your python scripts, do the following:
 ```python
 from {{ cookiecutter.project_slug }}.configs import config, path_to
 
+# check out which paths are set in config.toml
+path_to.show()
+
 # get the path to data
 path_to_data = path_to.DATA
 
