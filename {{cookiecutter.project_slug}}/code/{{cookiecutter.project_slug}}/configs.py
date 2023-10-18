@@ -1,5 +1,5 @@
 """
-Configuration for {{ cookiecutter.project_name }} project.
+Configurations for the {{ cookiecutter.project_name }} project.
 
 Note:
 ----
@@ -102,12 +102,12 @@ class _CONFIG:
                     path.update_paths(parent_path=parent_path)
 
         else:
-            print("Paths can't be converted to absolute paths, since no PROJECT_ROOT is found!")
+            print("\033[91mPaths can't be converted to absolute paths, since no PROJECT_ROOT is found!\033[0m")  # red
 
 
 def _set_wd(new_dir: str | Path) -> None:
     """
-    Set given directory as new working directory of the project.
+    Set the given directory as new working directory of the project.
 
     :param new_dir: name of new working directory (must be in project folder)
     """
@@ -117,8 +117,7 @@ def _set_wd(new_dir: str | Path) -> None:
 
     print("\033[94m" + f"Current working dir:\t{Path.cwd()}" + "\033[0m")  # print blue
 
-    # Check if new_dir is folder path or just folder name
-    change_dir = False
+    # Check if new_dir is a folder path or just a folder name
     new_dir = Path(new_dir)
     if new_dir.is_absolute():
         found = new_dir.is_dir()
@@ -128,26 +127,31 @@ def _set_wd(new_dir: str | Path) -> None:
 
     else:
         # Remove '/' if new_dir == 'folder/' OR '/folder'
-        new_dir = "".join(str(new_dir).split("/"))
+        new_dir = new_dir.name
 
-        found = str(new_dir) == Path.cwd().name
+        # Check if new_dir is current dir
+        found = new_dir == Path.cwd().name
         change_dir = not found
 
         # First look down the tree
         if not found:
             # Note: This works only for unique folder names
-            for path in sorted(Path(PROJECT_ROOT).glob(f"**/{new_dir}"), key=lambda x: len(str(x))):  # 2. '_' == files
-                change_dir = path != Path.cwd()
-                if change_dir:
-                    os.chdir(path)
+            paths_found = sorted(Path(PROJECT_ROOT).parent.glob(f"**/{new_dir}"), key=lambda x: len(x.parents))
+            if len(paths_found) > 1:
+                msg = (f"Found multiple folders with name '{new_dir}' in project '{PROJECT_NAME}'!\n\n"
+                       f"Please specify the absolute path to the desired folder:\n\n{[str(p) for p in paths_found]}")
+                raise ValueError(msg)
+
+            if len(paths_found) == 1:
                 found = True
-                break
+                os.chdir(paths_found.pop())
+
     if found and change_dir:
-        print("\033[93m" + f"New working dir:\t{Path.cwd()}\n" + "\033[0m")  # yellow print
+        print("\033[93m" + f"New working dir: '{Path.cwd()}'\n" + "\033[0m")  # yellow print
     elif found and not change_dir:
         pass
     else:
-        print("\033[91mGiven folder not found. Working dir remains:\t{Path.cwd()}\n\033[0m")  # red print
+        print("\033[91m" + f"Given folder not found. Working dir remains: '{Path.cwd()}'\n" + "\033[0m")  # red print
 
 
 # %% Setup configuration object < o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
