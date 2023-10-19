@@ -12,7 +12,7 @@ authors = [
 maintainers = [
     { name = "{{ cookiecutter.full_name }}", email = "{{ cookiecutter.email }}" },
 ]
-keywords = ["very", "great", "study"]
+keywords = ["very", "great", "study"]  # TODO change to actual keywords
 # Check for classifiers: https://pypi.org/classifiers/
 classifiers = [
     "Development Status :: 1 - Planning",
@@ -33,10 +33,10 @@ dependencies = [
 [project.optional-dependencies]
 test = [
     {%- if cookiecutter.use_black == 'y' %}
-    "black[jupyter]",
+    "black[jupyter]>=23.10",
     {%- endif %}
     {%- if cookiecutter.linting == 'ruff' %}
-    "ruff",
+    "ruff>=0.1.1",
     {%- elif cookiecutter.linting == 'flake8' %}
     "flake8",
     {%- endif %}
@@ -193,7 +193,7 @@ extend-exclude = [
 line-length = 119 # Same as flake8 and black
 target-version = "py{{ cookiecutter.python_version.replace('.', '') }}" # assume Python {{ cookiecutter.python_version }}
 output-format = "text"  # try out : "grouped"
-preview = false  # true: Ruff will use unstable rules and fixes
+# preview = true  # true: Ruff will use unstable rules and fixes
 
 [tool.ruff.extend-per-file-ignores]
 # Ignore specific rules in specific files
