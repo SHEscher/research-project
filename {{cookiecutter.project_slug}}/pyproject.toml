@@ -33,17 +33,17 @@ dependencies = [
 [project.optional-dependencies]
 test = [
     {%- if cookiecutter.use_black == 'y' %}
-    "black[jupyter]>=23.10",
+    "black[jupyter]>=23.10.0",
     {%- endif %}
     {%- if cookiecutter.linting == 'ruff' %}
-    "ruff>=0.1.1",
+    "ruff>=0.1.2",
     {%- elif cookiecutter.linting == 'flake8' %}
-    "flake8",
+    "flake8>=6.1.0",
     {%- endif %}
-    "tox>=3.25.1",
+    "tox>=4.11.3",
     {%- if cookiecutter.use_pytest == 'y' %}
-    "pytest",
-    "pytest-cov",
+    "pytest>=7.4.2",
+    "pytest-cov>=4.1.0",
     {%- endif %}
 ]
 
