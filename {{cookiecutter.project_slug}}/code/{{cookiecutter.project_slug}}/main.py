@@ -7,7 +7,7 @@ Years: {% now 'local', '%Y' %}
 """
 
 # %% Import
-from {{ cookiecutter.project_slug }}.configs import config, params, path_to
+from {{ cookiecutter.project_slug }}.configs import config, params, paths
 from {{ cookiecutter.project_slug }}.preprocessing.freesurfer import foo
 
 # %% Set global vars & paths >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
@@ -21,7 +21,7 @@ def main():
     """Run the main."""
     print(f"Access service x using my private key: {config.service_x.api_key}")
     foo()
-    print(f"{path_to.results.GLM}/{params.weight_decay}/")
+    print(f"{paths.results.GLM}/{params.weight_decay}/")
 
 
 # %% __main__  >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o

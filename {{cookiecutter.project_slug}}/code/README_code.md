@@ -59,13 +59,13 @@ Keep both config toml files and the script in the places, where they are.
 To use your configs in your python scripts, do the following:
 
 ```python
-from {{ cookiecutter.project_slug }}.configs import config, path_to
+from {{ cookiecutter.project_slug }}.configs import config, paths
 
 # check out which paths are set in config.toml
-path_to.show()
+paths.show()
 
 # get the path to data
-path_to_data = path_to.DATA
+path_to_data = paths.DATA
 
 # Get parameter from config
 weight_decay = config.params.weight_decay

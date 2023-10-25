@@ -179,8 +179,8 @@ else:
     config.paths.PROJECT_ROOT = PROJECT_ROOT
     config.paths.update_paths()
 
-# Extract paths
-path_to = config.paths  # ready for import in other scripts
+# Extract paths & params
+paths = config.paths  # ready for import in other scripts
 params = config.params  # ready for import in other scripts
 
 # Welcome

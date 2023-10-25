@@ -1,7 +1,7 @@
 # Config file for {{ cookiecutter.project_slug }}
 # Drop all relevant paths, parameters, etc. here
 # They can be accessed in the code via:
-#   from {{ cookiecutter.project_slug }}.configs import config, path_to, params
+#   from {{ cookiecutter.project_slug }}.configs import config, paths, params
 
 PROJECT_NAME = "{{ cookiecutter.project_slug }}"
 
