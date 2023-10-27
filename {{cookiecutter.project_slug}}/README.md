@@ -37,7 +37,7 @@ Then install the code of the research project as python package:
 
 ```shell
 # assuming your current working dircetory is the project root
-pip install -e ".[test]"
+pip install -e ".[develop]"
 ```
 
 **Note**: The `-e` flag installs the package in editable mode,

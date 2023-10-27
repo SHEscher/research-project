@@ -34,7 +34,7 @@ Python code (in the structure of a python package) is stored in `./code/{{ cooki
 To install the research code as package, run the following code in the project root directory:
 
 ```shell
-pip install -e .
+pip install -e ".[develop]"
 ```
 
 #### Jupyter Notebooks

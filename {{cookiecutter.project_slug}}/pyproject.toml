@@ -31,12 +31,12 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-test = [
+develop = [
     {%- if cookiecutter.use_black == 'y' %}
-    "black[jupyter]>=23.10.0",
+    "black[jupyter]>=23.10.1",
     {%- endif %}
     {%- if cookiecutter.linting == 'ruff' %}
-    "ruff>=0.1.2",
+    "ruff>=0.1.3",
     {%- elif cookiecutter.linting == 'flake8' %}
     "flake8>=6.1.0",
     {%- endif %}
