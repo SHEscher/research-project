@@ -11,6 +11,7 @@ or with the cookiecutter wrapper [`treasure`](https://github.com/SHEscher/Treasu
 
 ## TODO's
 
+- [ ] Add version to this template
 - [ ] Option to add multiple authors
 - [ ] Option to add project keywords
 - [ ] Optional: Add examples for other data types than MRI, including simulation studies
