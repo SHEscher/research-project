@@ -28,7 +28,7 @@ if command -v conda >/dev/null 2>&1; then
     if conda env list | grep -q "^${CONDA_ENV_NAME}\s"; then
         echo -e "\033[32mConda environment ${CONDA_ENV_NAME} already exists.\033[0m"
     else
-        conda create --name ${CONDA_ENV_NAME} python={{ cookiecutter.python_version }}
+        conda create --name ${CONDA_ENV_NAME} python={{ cookiecutter.python_version }} -y
     fi
 
     # Activate the new environment
