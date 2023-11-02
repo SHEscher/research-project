@@ -1,5 +1,5 @@
 """
-Setup the {{ cookiecutter.project_slug }} package.
+Setup of the {{ cookiecutter.project_slug }} package.
 
 Check the new setuptools installation (Oct, 2022), purely based on pyproject.toml:
 * https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
