@@ -7,11 +7,29 @@ This is a [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/) templat
 
 ## Usage
 
-This template is used by [`scilaunch`](https://github.com/SHEscher/scilaunch) (a `cookiecutter` wrapper for scientific projects). It can also be employed directly with [`cookiecutter`](https://github.com/cookiecutter/cookiecutter).
+This template is used by [`scilaunch`](https://github.com/SHEscher/scilaunch) (a `cookiecutter` wrapper for scientific research projects):
+
+```shell
+# Install scilaunch
+pip install -U scilaunch
+
+# Create a new project in current folder
+scilaunch
+
+# alternatively link to parent folder
+scilaunch path/to/parent/folder
+```
+
+The template can also be employed directly with [`cookiecutter`](https://github.com/cookiecutter/cookiecutter) using:
+
+```shell
+cookiecutter gh:SHEscher/research-project
+```
+
+However, ideally use this template with `scilaunch` to create your project, since there is some additional magic happening in the background.
 
 ## TODO's
 
-- [x] Add version to this template
 - [ ] Option to add multiple authors
 - [ ] Option to add project keywords
 - [ ] Optional: Add examples for other data types than MRI, including simulation studies
