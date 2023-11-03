@@ -6,7 +6,10 @@ Note:
     * store private configs in the same folder as 'config.toml', namely: "./[PRIVATE_PREFIX]_configs.toml"
     * keep the prefix, such that it is ignored by git
 
-Alternatively, configs could also be set using an .env file together with the python-dotenv package.
+Alternatives:
+-----------
+    * load *configs.toml's with the toml module (see below) and process it further with the package python-box
+    * configs could also be set using an .env file together with the python-dotenv package.
 
 Author: Simon M. Hofmann
 Contact: <[firstname].[lastname][at]pm.me>
