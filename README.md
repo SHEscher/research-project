@@ -1,4 +1,4 @@
-# Research-Project – A cookiecutter template for research projects
+# Research-Project – a cookiecutter template for research projects
 
 ![version](https://img.shields.io/badge/template_version-1.0.0-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
