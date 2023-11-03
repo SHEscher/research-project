@@ -23,12 +23,14 @@
 
 ## Install research code as package
 
-In case, there is no virtual / conda environment yet, create one for the research project:
+In case, there is no project-related virtual / conda environment yet, create one for the project:
 
 ```shell
 conda create -n {{ cookiecutter.project_slug[:4]}}_{{cookiecutter.python_version[:4] }} python={{ cookiecutter.python_version }}
 ```
+
 And activate it:
+
 ```shell
 conda activate {{ cookiecutter.project_slug[:4]}}_{{cookiecutter.python_version[:4] }}
 ```
@@ -52,7 +54,7 @@ Similarly, use this structure for Matlab or other programming languages, which a
 
 ## Publications
 
-*List resulted publications of this project here (including papers, posters, talks, ...)*
+*List publications resulted from this project (including papers, posters, talks, ...)*
 
 ## Preregistration
 
@@ -60,5 +62,4 @@ Similarly, use this structure for Matlab or other programming languages, which a
 
 ## Contributors/Collaborators
 
-*Name people who are involved in this project, their position and/or contribution.
-Optional: add contact data*
+*Name people who are involved in this project, their position and/or contribution. Optional: add contact data*
