@@ -1,17 +1,17 @@
 # Research-Project – A cookiecutter template for research projects
 
+![version](https://img.shields.io/badge/template_version-1.0.0-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 This is a [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/) template for (scientific) **research projects**.
 
 ## Usage
 
-This template can be used direclty with [`cookiecutter`](https://github.com/cookiecutter/cookiecutter),
-or with the cookiecutter wrapper [`treasure`](https://github.com/SHEscher/Treasure).
+This template is used by [`scilaunch`](https://github.com/SHEscher/scilaunch) (a `cookiecutter` wrapper for scientific projects). It can also be employed directly with [`cookiecutter`](https://github.com/cookiecutter/cookiecutter).
 
 ## TODO's
 
-- [ ] Add version to this template
+- [x] Add version to this template
 - [ ] Option to add multiple authors
 - [ ] Option to add project keywords
 - [ ] Optional: Add examples for other data types than MRI, including simulation studies
@@ -20,7 +20,3 @@ or with the cookiecutter wrapper [`treasure`](https://github.com/SHEscher/Treasu
 ## Credits
 
 Thanks to [audreyfeldroy](https://github.com/audreyfeldroy) for her inspiration with her [cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage) and the great [cookiecutter](https://github.com/cookiecutter/cookiecutter) package in general.
-
-## Created by
-
-[Simon M. Hofmann](https://github.com/SHEscher)
