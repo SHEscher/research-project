@@ -36,7 +36,7 @@ develop = [
     "black[jupyter]>=23.11.0",
     {%- endif %}
     {%- if cookiecutter.linting == 'ruff' %}
-    "ruff>=0.1.4",
+    "ruff>=0.1.5",
     {%- elif cookiecutter.linting == 'flake8' %}
     "flake8>=6.1.0",
     {%- endif %}
