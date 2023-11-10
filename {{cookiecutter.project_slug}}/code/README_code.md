@@ -29,6 +29,7 @@ Which languages (Python, R, Matlab, ...) were used? Are there specific package v
 which one should take care of? Or is there a container (e.g., Docker) or virtual environment?*
 
 ### Python
+
 Python code (in the structure of a python package) is stored in `./code/{{ cookiecutter.project_slug }}/`
 
 To install the research code as package, run the following code in the project root directory:
@@ -38,9 +39,11 @@ pip install -e ".[develop]"
 ```
 
 #### Jupyter Notebooks
+
 Jupyter notebooks are stored in `./code/notebooks/`
 
 ### R
+
 *Initialize a new R-project in the project root of `{{ cookiecutter.project_slug }}` with `RStudio`.
 R-scripts can be stored in `./code/Rscripts/`.
 Use R-packages in Python with, e.g., [rpy2](https://rpy2.github.io/), or use Python packages in R using,
@@ -73,6 +76,7 @@ weight_decay = config.params.weight_decay
 # Get private parameter from config
 api_key = config.service_x.api_key
 ```
+
 *Fill the corresponding `*config.toml` files with your data.*
 
 For other programming languages, corresponding scripts must be implemented to use these `*config.toml` files in a similar way.
@@ -80,5 +84,5 @@ For other programming languages, corresponding scripts must be implemented to us
 ## COPYRIGHT/LICENSE
 
 *One could add information about code sharing
-(e.g., is the code published on [GitLab](https://gitlab.gwdg.de/users/sign_in) or Github ...),
+(e.g., is the code published on GitLab or GitHub ...),
 license and copy right issues*

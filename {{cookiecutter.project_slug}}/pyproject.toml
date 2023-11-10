@@ -15,7 +15,7 @@ maintainers = [
 keywords = ["very", "great", "study"]  # TODO change to actual keywords
 # Check for classifiers: https://pypi.org/classifiers/
 classifiers = [
-    "Development Status :: 1 - Planning",
+    "Development Status :: 1 - Planning",  # see: https://pypi.org/classifiers/
     "Intended Audience :: Science/Research",
     "Natural Language :: English",
     "Programming Language :: Python :: 3 :: Only",
@@ -159,7 +159,7 @@ fix = false  # true: Ruff will try to fix errors automatically
 unfixable = [  # either with fix = true or when `ruff . --fix` is executed
     "ERA001",  # found commented-out code
     "F401",  # unused imports
-    # "RUF100",  # `noqa` directives that are no longer applicable
+    "RUF100",  # `noqa` directives that are no longer applicable
 ]
 # Ignore specific rules or the whole set of a rule
 ignore = [
@@ -183,7 +183,7 @@ src = ["code/{{ cookiecutter.project_slug }}", "code/notebooks", "code/tests"]
 # Exclude a variety of commonly ignored directories.
 include = ["*.py", "*.pyi", "**/pyproject.toml", "*.ipynb"]
 extend-exclude = [
-    "code/congifs",
+    "code/configs",
     "data",
     "literature",
     "organisation",
@@ -247,7 +247,7 @@ src = ["code/{{ cookiecutter.project_slug }}", "code/notebooks", "code/tests"]
 include = '(\.pyi?|\.ipynb)$'
 exclude = '''  # A regex preceded with ^/ will apply only to files and directories in the root of the project.
 (
-  ^/code/congifs
+  ^/code/configs
   | ^/data
   | ^/literature
   | ^/organisation
