@@ -1,13 +1,7 @@
 # {{ cookiecutter.project_name }} – **code**
 
-`[Last update: {% now 'local', '%B %e, %Y' %}]`
-
-***
-    Period:     {% now 'local', '%Y-%m' %} - ...
-    Status:     in preparation / work in progress / finalized
-
-    Author(s):  {{ cookiecutter.full_name }}
-    Contact:    {{ cookiecutter.email }}
+    Last update:    {% now 'local', '%B %e, %Y' %}
+    Status:         work in progress
 
 ***
 

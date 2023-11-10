@@ -4,7 +4,7 @@
 
 ***
     Period:     {% now 'local', '%Y-%m' %} - ...
-    Status:     in preparation / work in progress / finalized
+    Status:     work in progress
 
     Author(s):  {{ cookiecutter.full_name }}
     Contact:    {{ cookiecutter.email }}
