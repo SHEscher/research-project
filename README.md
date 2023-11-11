@@ -28,6 +28,42 @@ cookiecutter gh:SHEscher/research-project
 
 However, ideally use this template with `scilaunch` to create your project, since there is some additional magic happening in the background.
 
+And this is an excerpt of what you get:
+
+```
+🚀 yourgreatstudy/
+├── 📄 README.md
+├── 📂 code
+│   ├── 📁 Rscripts
+│   ├── 📁 configs
+│   ├── 📂 notebooks
+│   │   └── 🐍 yourgreatstudy.ipynb
+│   ├── 📁 tests
+│   └── 📂 yourgreatstudy
+│       ├── 🐍 __init__.py
+│       └── 📁 preprocessing
+├── 📂 data
+│   ├── 📋 participants.tsv
+│   ├── 📁 sub-01
+│   ├── 📁 sub-02
+│   └── 📁 sub-03
+├── 📂 literature
+│   ├── 📁 pdfs
+│   └── 📙 yourgreatstudy.bib
+├── 📂 organisation
+│   ├── 📁 ethics
+│   ├── 📁 participation_forms
+│   ├── 📁 preregistration
+├── 📂 publications
+│   ├── 📁 articles
+│   ├── 📁 poster
+│   └── 📁 presentations
+├── 📄 pyproject.toml
+├── 📂 results
+│   └── 📁 datavisualization
+└── 🐍 setup.py
+```
+
 ## TODO's
 
 - [ ] Option to add multiple authors
