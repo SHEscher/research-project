@@ -13,9 +13,8 @@ push = true
 
 [bumpver.file_patterns]
 "README.md" = [
-    "{version}",  # fills the badge
+    "template_version-{version}",  # fills the badge
 ]
 "bumpver.toml" = [
     'current_version = "{version}"',
 ]
-
