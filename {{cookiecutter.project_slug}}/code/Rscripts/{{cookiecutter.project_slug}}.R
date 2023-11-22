@@ -2,7 +2,6 @@
 # Description:  This script is an example script using R in your research project.
 #               Adapt it to your liking.
 # Author: {{ cookiecutter.full_name }}
-# Contact: {{ cookiecutter.email }}
 # Years: {% now 'local', '%Y' %}
 
 # package dependencies

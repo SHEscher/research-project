@@ -9,7 +9,6 @@ You can add me as file template for python in your IDE:
 This template assumes a max line-length of 119
 
 Author: {{ cookiecutter.full_name }}
-Contact: {{ cookiecutter.email }}
 Years: {% now 'local', '%Y' %}
 """
 
