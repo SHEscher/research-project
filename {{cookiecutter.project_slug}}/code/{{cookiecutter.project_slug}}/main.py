@@ -2,16 +2,17 @@
 Main module for {{ cookiecutter.project_slug }}.
 
 Author: {{ cookiecutter.full_name }}
-Contact: {{ cookiecutter.email }}
 Years: {% now 'local', '%Y' %}
 """
 
 # %% Import
+import logging
+
 from {{ cookiecutter.project_slug }}.configs import config, params, paths
 from {{ cookiecutter.project_slug }}.preprocessing.freesurfer import foo
 
 # %% Set global vars & paths >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
-pass
+logger = logging.getLogger(__name__)
 
 
 # %% Functions >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
@@ -22,6 +23,7 @@ def main():
     print(f"Access service x using my private key: {config.service_x.api_key}")
     foo()
     print(f"{paths.results.GLM}/{params.weight_decay}/")
+    logger.info("Use pre-configured loggers! You can change logging.configs in 'code/configs/config.toml'")
 
 
 # %% __main__  >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o

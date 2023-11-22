@@ -12,7 +12,7 @@ Alternatives:
     * configs could also be set using an .env file together with the python-dotenv package.
 
 Author: Simon M. Hofmann
-Contact: <[firstname].[lastname][at]pm.me>
+GitHub: SHEscher
 Years: 2023
 
 """
@@ -29,10 +29,27 @@ if sys.version_info >= (3, 11):
 else:
     import toml
 
+import logging.config
 from pathlib import Path
 from typing import Any
 
 # %% Config class & functions ><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
+
+
+def _iter_nested_dicts(nested_dict: dict[str, Any]) -> Any:
+    """Generator iterating over values in nested dicts."""
+    for value in nested_dict.values():
+        if isinstance(value, dict):
+            yield from _iter_nested_dicts(value)
+        else:
+            yield value
+
+
+def _create_parent_dirs(config_as_dict: dict[str, Any]) -> None:
+    """Create parent dirs of log files."""
+    for value in _iter_nested_dicts(config_as_dict):
+        if isinstance(value, str) and value.endswith(".log"):
+            Path(PROJECT_ROOT, value).parent.mkdir(parents=True, exist_ok=True)
 
 
 class _CONFIG:
@@ -71,7 +88,13 @@ class _CONFIG:
                 setattr(self, k, _CONFIG(val) if isinstance(val, dict) else val)
 
     def show(self, indent: int = 0):
-        """Display configurations in nested way."""
+        """
+        Display the nested configuration information.
+
+        :param indent: The number of tabs to use for indentation (default: 0)
+        :type indent: int
+        :return: None
+        """
         for key, val in self.__dict__.items():
             if isinstance(val, _CONFIG):
                 print("\t" * indent + f"{key}:")
@@ -90,7 +113,7 @@ class _CONFIG:
                 dict_out.update({key: val})
         return dict_out
 
-    def update_paths(self, parent_path: str | None = None):
+    def update_paths(self, parent_path: str | None = None, for_logging: bool = False):
         """Update relative paths to PROJECT_ROOT dir."""
         # Use project root dir as parent path if not specified
         parent_path = self.PROJECT_ROOT if hasattr(self, "PROJECT_ROOT") else parent_path
@@ -100,10 +123,13 @@ class _CONFIG:
 
             for key, path in self.__dict__.items():
                 if isinstance(path, str) and not Path(path).is_absolute():
+                    if for_logging and key != "filename":
+                        # In the case of logging configs, apply only on filename
+                        continue
                     self.__dict__.update({key: str(Path(parent_path).joinpath(path))})
 
                 elif isinstance(path, _CONFIG):
-                    path.update_paths(parent_path=parent_path)
+                    path.update_paths(parent_path=parent_path, for_logging=for_logging)
 
         else:
             print("\033[91mPaths can't be converted to absolute paths, since no PROJECT_ROOT is found!\033[0m")  # red
@@ -142,8 +168,10 @@ def _set_wd(new_dir: str | Path) -> None:
             # Note: This works only for unique folder names
             paths_found = sorted(Path(PROJECT_ROOT).parent.glob(f"**/{new_dir}"), key=lambda x: len(x.parents))
             if len(paths_found) > 1:
-                msg = (f"Found multiple folders with name '{new_dir}' in project '{PROJECT_NAME}'!\n\n"
-                       f"Please specify the absolute path to the desired folder:\n\n{[str(p) for p in paths_found]}")
+                msg = (
+                    f"Found multiple folders with name '{new_dir}' in project '{PROJECT_NAME}'!\n\n"
+                    f"Please specify the absolute path to the desired folder:\n\n{[str(p) for p in paths_found]}"
+                )
                 raise ValueError(msg)
 
             if len(paths_found) == 1:
@@ -183,9 +211,15 @@ else:
     config.paths.PROJECT_ROOT = PROJECT_ROOT
     config.paths.update_paths()
 
-# Extract paths & params
+# Prepare logging
+config.logging.update_paths(parent_path=PROJECT_ROOT, for_logging=True)
+_create_parent_dirs(config_as_dict=config.logging.asdict())
+
+
+# Extract paths & params, and set logging configs
 paths = config.paths  # ready for import in other scripts
 params = config.params  # ready for import in other scripts
+logging.config.dictConfig(config.logging.asdict())  # in other scripts: import logging & logging.getLogger(__name__)
 
 # Welcome
 print("\n" + ("*" * 95 + "\n") * 2 + "\n" + "\t" * 10 + PROJECT_NAME + "\n" * 2 + ("*" * 95 + "\n") * 2)
