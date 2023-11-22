@@ -77,7 +77,8 @@ class _CONFIG:
                 print("\t" * indent + f"{key}:")
                 val.show(indent=indent + 1)
             else:
-                print("\t" * indent + f"{key}: " + (f"'{val}'" if isinstance(val, str) else f"{val}"))
+                _val = val.replace("\n", "\\n").replace("\t", "\\t") if isinstance(val, str) else val
+                print("\t" * indent + f"{key}: " + (f"'{_val}'" if isinstance(val, str) else f"{val}"))
 
     def asdict(self):
         """Convert config object to dict."""
