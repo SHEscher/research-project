@@ -37,7 +37,7 @@ from typing import Any
 
 
 def _iter_nested_dicts(nested_dict: dict[str, Any]) -> Any:
-    """Generator iterating over values in nested dicts."""
+    """Create generator iterating over values in nested dicts."""
     for value in nested_dict.values():
         if isinstance(value, dict):
             yield from _iter_nested_dicts(value)
