@@ -12,7 +12,7 @@ If your research data resides somewhere else and is too big to copy, you can eas
 
 *List relevant information one needs to know about the (raw) data.
 This could include how data was acquired.
-Also, mention where are backups of raw data, intermediate preprocessed data, and derivatives.
+Also, mention where one can find backups of raw data, intermediate preprocessed data, and derivatives.
 Moreover, mention how the data is structured, e.g., in [BIDS](https://bids-specification.readthedocs.io/en/stable/).*
 
 ## Preprocessing
