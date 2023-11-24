@@ -23,6 +23,7 @@ classifiers = [
     "Programming Language :: Python :: {{ cookiecutter.python_version }}",
 ]
 
+# Similar to a requirements.txt file, fill in the dependencies your project requires
 dependencies = [
     "ipykernel",
     "numpy",
