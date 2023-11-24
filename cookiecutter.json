@@ -31,7 +31,7 @@
     "__prompts__": {
         "full_name": "Provide full name of author:",
         "email": "Provide author's email:",
-        "github_username": "Proive GitHub username or organization:",
+        "github_username": "Provide GitHub username or organization:",
         "project_name": "Select your research project name:",
         "project_slug": "Select a short name for your research project / module (one word):",
         "project_short_description": "Write a short project description:",
