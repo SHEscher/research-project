@@ -23,7 +23,7 @@ def main():
     print(f"Access service x using my private key: {config.service_x.api_key}")
     foo()
     print(f"{paths.results.GLM}/{params.weight_decay}/")
-    logger.info("Use pre-configured loggers! You can change logging.configs in 'code/configs/config.toml'")
+    logger.info("My first log entry. Use pre-configured loggers! You can change logging.configs in 'code/configs/config.toml'")
 
 
 # %% __main__  >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
