@@ -76,6 +76,6 @@ if [ -d ".git" ]; then
     echo -e ""
 else
     echo -e "\033[34m\nActivating git in {{ cookiecutter.project_slug }} ...\n\033[0m"
-    git init
+    git init --initial-branch=main
 fi
 {% endif %}
