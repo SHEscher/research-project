@@ -7,7 +7,6 @@ import subprocess
 import sys
 
 
-
 # %% Set global vars & paths >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 MODULE_REGEX = r'^[_a-zA-Z][_a-zA-Z0-9]+$'
 
