@@ -1,0 +1,34 @@
+# Config file for {{ cookiecutter.project_slug }}
+# Drop all relevant paths, parameters, etc. here
+# Note, store private configs in the same folder as this file: "./[PRIVATE_PREFIX]_configs.toml"
+# They shouldn't be tracked via git
+
+PROJECT_NAME = "{{ cookiecutter.project_slug }}"
+
+# Set paths
+[paths]
+# all paths are relative to the PROJECT_ROOT folder named '{{ cookiecutter.project_slug }}' (PROJECT_NAME)
+DATA = "./data"
+RESULTS = "./results"
+CACHE = "./data/cache"
+    [paths.results]
+    GLM = "./results/glm"
+
+# Set parameters
+[params]
+weight_decay = 0.01
+
+# Set logging
+[logging]
+version = 1  # currently only version 1
+disable_existing_loggers = false
+
+# TOML-related MISC:
+#   Follwing creates arrays of tables
+# [[tester]]
+# id = 3
+# name = "Nomis"
+#
+# [[tester]]
+# id = 2
+# name = "Divad"

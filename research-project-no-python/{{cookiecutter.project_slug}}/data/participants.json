@@ -1,0 +1,37 @@
+{
+    "age": {
+      "LongName": "",
+      "Description": "age of the participant",
+      "Levels": {
+      },
+      "Units": "years",
+      "TermURL": "http://www.todo.com/fixme"
+    },
+
+    "height": {
+      "LongName": "",
+      "Description": "height of the participant",
+      "Levels": {
+      },
+      "Units": "cm",
+      "TermURL": "http://www.todo.com/fixme"
+    },
+
+    "weight": {
+      "LongName": "",
+      "Description": "weight of the participant",
+      "Levels": {
+      },
+      "Units": "kg",
+      "TermURL": "http://www.todo.com/fixme"
+    },
+
+    "subject_id": {
+      "LongName": "",
+      "Description": "The subject ID of the participant as listed in the original dataset",
+      "Levels": {
+      },
+      "Units": "",
+      "TermURL": "http://www.todo.com/fixme"
+    }
+  }
