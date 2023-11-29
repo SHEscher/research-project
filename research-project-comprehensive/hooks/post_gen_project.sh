@@ -21,7 +21,6 @@ while conda env list | grep -q -w "$CONDA_ENV_NAME"; do
 done
 
 echo -e "\033[34mCreating and activating conda environment ${CONDA_ENV_NAME} ...\n\033[0m"
-exit  # TODO: REMOVE AFTER TESTING
 # Check if conda is available
 if command -v conda >/dev/null 2>&1; then
     # Create a new environment with Python version 3.8
