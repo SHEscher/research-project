@@ -11,7 +11,8 @@
 
 ***
 
-*In general, one can add README's in nearly every folder. The guiding principle should always be that any person who is not familiar with the project can find their way exclusively via the README's – 'This may be you one day'*
+*In general, one can add README's in nearly every folder.
+The guiding principle should always be that any person who is not familiar with the project can find their way exclusively via the README's – 'This may be you one day'*
 
 ## Project description
 
@@ -19,7 +20,10 @@
 
 ## Project structure
 
-*A brief description of the folder structure of the project (Where is what?). Anticipate new lab members who suppose to be able to orientate within this structure without your help. At the same time, avoid too detailed descriptions. Down the folder structure, there suppose to be further README's explaining subsequent folders & data.*
+*A brief description of the folder structure of the project (Where is what?).
+Anticipate new lab members who suppose to be able to orientate within this structure without your help.
+At the same time, avoid too detailed descriptions.
+Down the folder structure, there suppose to be further README's explaining subsequent folders & data.*
 
 ## Install research code as package
 
