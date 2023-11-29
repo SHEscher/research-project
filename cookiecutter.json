@@ -22,24 +22,24 @@
         "ISC license",
         "Apache Software License 2.0",
         "GNU General Public License v3",
-        "Not open source"
+        "Not open source (yet)"
     ],
     "_copy_without_render": [
         "*.nii.gz",
         "*.pdf"
     ],
     "__prompts__": {
-        "full_name": "Provide full name of author:",
-        "email": "Provide author's email:",
-        "github_username": "Provide GitHub username or organization:",
+        "full_name": "Provide the full name of the main author:",
+        "email": "Provide the author's email:",
+        "github_username": "Provide the GitHub username or organization:",
         "project_name": "Select your research project name:",
         "project_slug": "Select a short name for your research project / module (one word):",
         "project_short_description": "Write a short project description:",
         "version": "Version of your research project:",
         "python_version": "Which Python version to use:",
         "create_conda_env": "Do you want to create a conda environment:",
-        "init_git": "Initialize a git repository in project folder:",
-        "use_pytest": "To use pytest for testing (else unittest):",
+        "init_git": "Initialize a git repository in the project folder:",
+        "use_pytest": "Do you want to use pytest for code testing (else unittest):",
         "use_black": "Enable black formatting:",
         "linting": {
             "__prompt__": "Which linting tool do you want to use?",
