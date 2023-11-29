@@ -1,5 +1,5 @@
 """
-Use me as template for other Python scripts.
+Use me as a template for other Python scripts.
 
 You can add me as file template for python in your IDE:
     PyCharm: Settings > File and Code Templates > Python Script
