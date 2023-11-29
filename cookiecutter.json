@@ -1,52 +1,19 @@
 {
-    "full_name": "Simon M. Hofmann",
-    "email": "simon.m.hofmann@example.com",
-    "github_username": "SHEscher",
-    "project_name": "MyGreatStudy",
-    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-    "project_short_description": "{{ cookiecutter.project_name}} comprises great reproducible research",
-    "version": "0.1.0",
-    "python_version": "3.11",
-    "create_conda_env": true,
-    "init_git": true,
-    "use_pytest": true,
-    "use_black": true,
-    "linting": [
-        "ruff",
-        "flake8",
-        "none"
-    ],
-    "open_source_license": [
-        "MIT license",
-        "BSD license",
-        "ISC license",
-        "Apache Software License 2.0",
-        "GNU General Public License v3",
-        "Not open source (yet)"
-    ],
-    "_copy_without_render": [
-        "*.nii.gz",
-        "*.pdf"
-    ],
-    "__prompts__": {
-        "full_name": "Provide the full name of the main author:",
-        "email": "Provide the author's email:",
-        "github_username": "Provide the GitHub username or organization:",
-        "project_name": "Select your research project name:",
-        "project_slug": "Select a short name for your research project / module (one word):",
-        "project_short_description": "Write a short project description:",
-        "version": "Version of your research project:",
-        "python_version": "Which Python version to use:",
-        "create_conda_env": "Do you want to create a conda environment:",
-        "init_git": "Initialize a git repository in the project folder:",
-        "use_pytest": "Do you want to use pytest for code testing (else unittest):",
-        "use_black": "Enable black formatting:",
-        "linting": {
-            "__prompt__": "Which linting tool do you want to use?",
-            "ruff": "Ruff",
-            "flake8": "Flake8",
-            "none": "No linting tool"
+    "templates": {
+        "research-project": {
+            "path": "./research-project-comprehensive",
+            "title": "Comprehensive",
+            "description": "Create the full structure with essentials for Python, R, general configs & more"
         },
-        "open_source_license": "Select an (open source) license"
+        "research-project no python": {
+            "path": "./research-project-no-python",
+            "title": "No Python",
+            "description": "Create the full structure excluding the Python setup"
+        },
+        "research-project lite": {
+            "path": "./research-project-lite",
+            "title": "Lite",
+            "description": "Create a clean & simple folder structure. No examples, code & config files included"
+        }
     }
 }
