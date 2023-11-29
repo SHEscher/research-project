@@ -17,6 +17,7 @@ module_name = '{{ cookiecutter.project_slug }}'
 # %% Functions >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
 def is_conda_installed():
+    """Check if conda is installed on the machine."""
     try:
         subprocess.check_output(['conda', '--version'])
         return True
