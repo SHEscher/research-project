@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Create a new conda environment and activate it
-{% if cookiecutter.create_conda_env == 'y' -%}
+{% if cookiecutter.create_conda_env -%}
 
 # Define the base environment name
 BASE_CONDA_ENV_NAME="{{ cookiecutter.project_slug[:4]}}_{{cookiecutter.python_version[:4] }}"
@@ -70,7 +70,7 @@ fi
 {% endif %}
 
 # Activate git in the project
-{% if cookiecutter.init_git == 'y' -%}
+{% if cookiecutter.init_git -%}
 # check if .git/ exists
 if [ -d ".git" ]; then
     echo -e ""

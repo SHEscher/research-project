@@ -28,7 +28,7 @@ def is_conda_installed() -> bool:
 
 if __name__ == '__main__':
 
-    {%- if cookiecutter.create_conda_env == 'y' -%}
+    {%- if cookiecutter.create_conda_env -%}
     # In case of True add your content here
     if not is_conda_installed():
         print("\033[31m\nERROR: Conda is not installed on your machine. Please install and run again!\033[0m\n")

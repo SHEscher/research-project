@@ -1,7 +1,7 @@
 """Tests for `{{ cookiecutter.project_slug }}` package."""
 
 # %% Import
-{% if cookiecutter.use_pytest == 'y' -%}
+{% if cookiecutter.use_pytest -%}
 import pytest
 {% else %}
 import unittest

@@ -49,7 +49,7 @@ if __name__ == '__main__':
         f.seek(0, 0)
         f.write(LINES_TO_ADD_TO_GITIGNORE + file_content)
 
-    {% if cookiecutter.init_git == 'y' -%}
+    {% if cookiecutter.init_git -%}
     # Run git add . & make first commit
     print("\033[34m\nRunning git add . & do first project commit ...\n\033[0m")
     if not (PROJECT_DIRECTORY / ".git/").exists():
