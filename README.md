@@ -1,6 +1,6 @@
 # Research-Project – a cookiecutter template for research projects
 
-![version](https://img.shields.io/badge/template_version-1.0.1-brightgreen)
+![version](https://img.shields.io/badge/template_version-1.0.2-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 This is a [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/) template for (scientific) **research projects**.
