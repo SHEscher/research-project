@@ -68,14 +68,3 @@ else
     echo -e "\033[31mconda is not available. Please install conda and try again.\033[0m"
 fi
 {% endif %}
-
-# Activate git in the project
-{% if cookiecutter.init_git -%}
-# check if .git/ exists
-if [ -d ".git" ]; then
-    echo -e ""
-else
-    echo -e "\033[34m\nActivating git in {{ cookiecutter.project_slug }} ...\n\033[0m"
-    git init --initial-branch=main
-fi
-{% endif %}

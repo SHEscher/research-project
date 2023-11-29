@@ -51,10 +51,10 @@ if __name__ == '__main__':
 
     {% if cookiecutter.init_git -%}
     # Run git add . & make first commit
-    print("\033[34m\nRunning git add . & do first project commit ...\n\033[0m")
     if not (PROJECT_DIRECTORY / ".git/").exists():
         print("\033[34m\nActivating git in {{ cookiecutter.project_slug }} ...\n\033[0m")
-        subprocess.run(["git", "init"], check=False)
+        subprocess.run(["git", "init", "--initial-branch=main"], check=False)
+    print("\033[34m\nRunning git add . & do first project commit ...\n\033[0m")
     subprocess.run(["git", "add", "."], check=False)
     subprocess.run(["git", "commit", "-m", "Initial commit of {{ cookiecutter.project_slug }}"], check=False)
     {% else %}
@@ -65,8 +65,9 @@ if __name__ == '__main__':
 
     print("\033[32m\n\nI am done creating the new research project in: %s\n\033[0m" % PROJECT_DIRECTORY)
 
-    if '{{ cookiecutter.create_conda_env }}' == 'y':
-        CONDA_ENV_NAME="{{ cookiecutter.project_slug[:4]}}_{{cookiecutter.python_version[:4] }}"
-        print("\nTo activate the conda environment, run:\n\nconda activate %s\n" % CONDA_ENV_NAME)
+    {% if cookiecutter.create_conda_env %}
+    CONDA_ENV_NAME="{{ cookiecutter.project_slug[:4]}}_{{cookiecutter.python_version[:4] }}"
+    print("\nTo activate the conda environment, run:\n\nconda activate %s\n" % CONDA_ENV_NAME)
+    {%- endif %}
 
 # o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o END
