@@ -13,7 +13,7 @@ pass
 
 
 # %% Test Functions o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
-{%- if cookiecutter.use_pytest == 'y' %}
+{%- if cookiecutter.use_pytest %}
 
 
 @pytest.fixture()
