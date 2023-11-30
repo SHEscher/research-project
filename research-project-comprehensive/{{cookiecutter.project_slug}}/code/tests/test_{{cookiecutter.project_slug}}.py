@@ -8,14 +8,9 @@ import unittest
 {%- endif -%}
 from {{ cookiecutter.project_slug }}.preprocessing.freesurfer import foo
 
+
 # %% Set global vars & paths >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
-pass
-
-
-# %% Test Functions o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 {%- if cookiecutter.use_pytest %}
-
-
 @pytest.fixture()
 def response():
     """
@@ -24,7 +19,13 @@ def response():
     See more at: https://doc.pytest.org/en/latest/fixture.html
     """
     # import requests
-    # return requests.get('https://github.com/audreyr/cookiecutter-pypackage')
+    # return requests.get("https://github.com/shescher/research-project")
+{% else %}
+pass
+{% endif %}
+
+# %% Test Functions o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
+{%- if cookiecutter.use_pytest %}
 
 
 def test_content(response):
@@ -34,6 +35,7 @@ def test_content(response):
 
 
 def test_foo():
+    """Test the foo function."""
     assert foo() is None
 
 

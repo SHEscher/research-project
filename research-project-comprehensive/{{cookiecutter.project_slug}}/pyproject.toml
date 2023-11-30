@@ -209,6 +209,7 @@ target-version = "py{{ cookiecutter.python_version.replace('.', '') }}" # assume
 # Ignore specific rules in specific files
 [tool.ruff.extend-per-file-ignores]
 "__init__.py" = ["F401", "D104"]
+"configs.py" = ["UP036", "UP038"]
 "*.ipynb" = ["D100"]  # ignore docsstring in notebooks
 "code/tests/*.py" = ["S101"]  # ignore assert statements in tests
 
