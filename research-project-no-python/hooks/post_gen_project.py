@@ -31,10 +31,10 @@ pass
 
 # %% __main__  >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     # Remove license file if not open source
-    if 'Not open source' == '{{ cookiecutter.open_source_license }}':
+    if "Not open source" in "{{ cookiecutter.open_source_license }}":
         (PROJECT_DIRECTORY / "LICENSE").unlink()
 
     # Remove all empty *_FILES
