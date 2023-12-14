@@ -5,12 +5,11 @@ We can't dertermine whether this runs before or after post_gen_project.sh script
 """
 
 # %% Import
-import os
 from pathlib import Path
 import subprocess
 
 # %% Set global vars & paths >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
-PROJECT_DIRECTORY = Path.cwd().resolve()  # os.path.realpath(os.path.curdir)
+PROJECT_DIRECTORY = Path.cwd().resolve()
 PROJECT_GITIGNORE = PROJECT_DIRECTORY / ".gitignore"
 LINES_TO_ADD_TO_GITIGNORE = """# Bigger research folders
 data/

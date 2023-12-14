@@ -35,8 +35,8 @@ if command -v conda >/dev/null 2>&1; then
     # List of files to source (bit of a hacky way to do it)
     files=("${HOME}/.bash_profile" "${HOME}/.bashrc" "${HOME}/.zprofile" "${HOME}/.zshrc" "${HOME}/.profile")
 
-    which conda
-    whereis conda
+    # which conda
+    # whereis conda
 
     # Loop over files and source them if they exist and contain __conda_setup
     # (this is necessary for the subprocess spawned by cookiecutter)
