@@ -35,10 +35,10 @@ dependencies = [
 [project.optional-dependencies]
 develop = [
     {%- if cookiecutter.use_black %}
-    "black[jupyter]>=23.11.0",
+    "black[jupyter]>=23.12.0",
     {%- endif %}
     {%- if cookiecutter.linting == 'ruff' %}
-    "ruff>=0.1.7",
+    "ruff>=0.1.8",
     {%- elif cookiecutter.linting == 'flake8' %}
     "flake8>=6.1.0",
     {%- endif %}
@@ -180,6 +180,7 @@ ignore = [
     "E402",  # Module level import not at top of file (covert by ISORT)
     # "E501",  # Ignore line-length since we use 119
     # "ERA001",  # Found commented-out code
+    # "ISC001",  # single-line-implicit-string-concatenation [toogle if you use `ruff format`]
     "S301",  # suspicious-pickle-usage
     "TD002",  # Missing author in To-Do
     "TD003",  # Missing issue link on the line following a To-Do
@@ -213,6 +214,15 @@ target-version = "py{{ cookiecutter.python_version.replace('.', '') }}" # assume
 "*.ipynb" = ["D100"]  # ignore docsstring in notebooks
 "code/tests/*.py" = ["S101"]  # ignore assert statements in tests
 
+[tool.ruff.format]
+# Check: https://docs.astral.sh/ruff/settings/#format
+# quote-style = "single"  # default: "double"
+# indent-style = "tab"  # Use tabs instead of 4 space indentation.
+# skip-magic-trailing-comma = true  # default: false
+docstring-code-format = true  # default: false
+# docstring-code-line-length = 80
+# preview = true  # true: Ruff will use unstable rules for formatting; default: false
+
 # Configure specific linters
 [tool.ruff.flake8-annotations]
 allow-star-arg-any = true
@@ -221,6 +231,9 @@ suppress-none-returning = true
 
 [tool.ruff.flake8-comprehensions]
 allow-dict-calls-with-keyword-arguments = true
+
+[tool.ruff.flake8-type-checking]
+# quote-annotations = true # default: false
 
 [tool.ruff.isort]
 known-local-folder = ["code/{{ cookiecutter.project_slug }}"]
