@@ -67,7 +67,7 @@ zip-safe = false
 # To automatically find the package(s) (Beta feature (Oct, 2022)):
 [tool.setuptools.packages.find]
 where = ["code"]
-include = ["{{ cookiecutter.project_slug }}"]
+include = ["{{ cookiecutter.project_slug }}", "{{ cookiecutter.project_slug }}.*"]
 exclude = ["tests", "notebooks", "configs"]
 
 # Include non-python files in the package (uncomment if needed)
