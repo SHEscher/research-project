@@ -9,4 +9,3 @@ import {{ cookiecutter.project_slug }}.configs
 import {{ cookiecutter.project_slug }}.datavisualization
 import {{ cookiecutter.project_slug }}.modeling
 import {{ cookiecutter.project_slug }}.preprocessing
-

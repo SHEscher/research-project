@@ -1,12 +1,13 @@
 """Tests for `{{ cookiecutter.project_slug }}` package."""
 
 # %% Import
-import pytest
 import unittest
+
+import pytest
 from {{ cookiecutter.project_slug }}.preprocessing.freesurfer import foo
 
-
 # %% Set global vars & paths >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
+
 
 @pytest.fixture()
 def response():
