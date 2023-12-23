@@ -35,18 +35,16 @@ dependencies = [
 [project.optional-dependencies]
 develop = [
     {%- if cookiecutter.use_black %}
-    "black[jupyter]>=23.12.0",
+    "black[jupyter]>=23.12.1",
     {%- endif %}
     {%- if cookiecutter.linting == 'ruff' %}
-    "ruff>=0.1.8",
+    "ruff>=0.1.9",
     {%- elif cookiecutter.linting == 'flake8' %}
     "flake8>=6.1.0",
     {%- endif %}
     "tox>=4.11.4",
-    {%- if cookiecutter.use_pytest %}
     "pytest>=7.4.3",
     "pytest-cov>=4.1.0",
-    {%- endif %}
 ]
 
 [project.urls]
@@ -85,11 +83,9 @@ exclude = ["tests", "notebooks", "configs"]
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
-{%- if cookiecutter.use_pytest %}
 [tool.pytest.ini_options]
 #addopts = "--cov={{ cookiecutter.project_slug }}"
 testpaths = ["code/tests"]
-{%- endif %}
 
 [tool.mypy]
 mypy_path = "code"
@@ -142,9 +138,7 @@ select = [   # add /comment-out rules (list below does not contain all rules)
     # "ICN", # flake8-import-conventions
     "G", # flake8-logging-format
     "INP", # flake8-no-pep420
-    {%- if cookiecutter.use_pytest %}
     "PT", # flake8-pytest-style
-    {%- endif %}
     "Q", # flake8-quotes
     "RET", # flake8-return
     "SIM", # flake8-simplify

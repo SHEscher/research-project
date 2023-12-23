@@ -9,7 +9,6 @@
     "python_version": "3.11",
     "create_conda_env": true,
     "init_git": true,
-    "use_pytest": true,
     "use_black": true,
     "linting": [
         "ruff",
@@ -39,7 +38,6 @@
         "python_version": "Which Python version to use:",
         "create_conda_env": "Do you want to create a conda environment:",
         "init_git": "Initialize a git repository in the project folder:",
-        "use_pytest": "Do you want to use pytest for code testing (else unittest):",
         "use_black": "Enable black formatting:",
         "linting": {
             "__prompt__": "Which linting tool do you want to use?",
