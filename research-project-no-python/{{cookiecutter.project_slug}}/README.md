@@ -15,7 +15,7 @@
 
 ## Project description
 
-*A brief general description of the project.*
+{{ cookiecutter.project_short_description }}
 
 ## Project structure
 
