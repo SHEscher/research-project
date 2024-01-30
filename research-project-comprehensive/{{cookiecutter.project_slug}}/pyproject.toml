@@ -35,15 +35,15 @@ dependencies = [
 [project.optional-dependencies]
 develop = [
     {%- if cookiecutter.use_black %}
-    "black[jupyter]>=23.12.1",
+    "black[jupyter]>=24.1.1",
     {%- endif %}
     {%- if cookiecutter.linting == 'ruff' %}
-    "ruff>=0.1.14",
+    "ruff>=0.1.15",
     {%- elif cookiecutter.linting == 'flake8' %}
     "flake8>=7.0.0",
     {%- endif %}
-    "tox>=4.11.4",
-    "pytest>=7.4.3",
+    "tox>=4.12.1",
+    "pytest>=8.0.0",
     "pytest-cov>=4.1.0",
 ]
 
