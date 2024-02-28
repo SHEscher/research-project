@@ -115,7 +115,7 @@ no_implicit_reexport = true
 data_file = "code/tests/.coverage"
 
 [tool.coverage.report]
-exclude_lines = ["if __name__ == .__main__.:"]
+exclude_lines = ["if __name__ == .__main__.:", "if TYPE_CHECKING:", "@abstract"]
 
 [tool.coverage.html]
 directory = "code/tests/coverage_html_report"
