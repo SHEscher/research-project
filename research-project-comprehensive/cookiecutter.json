@@ -38,7 +38,7 @@
         "use_black": "Enable Black formatting for Python:",
         "linting": {
             "__prompt__": "Which Python linter do you want to use?",
-            "ruff": "Ruff",
+            "ruff": "Ruff (recommended)",
             "flake8": "Flake8"
         },
         "open_source_license": "Select an (open source) license"
