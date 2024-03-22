@@ -1,4 +1,4 @@
-"""Tests for `{{ cookiecutter.project_slug }}` package."""
+"""Tests for the `{{ cookiecutter.project_slug }}` package."""
 
 # %% Import
 import unittest
