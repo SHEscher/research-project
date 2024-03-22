@@ -5,15 +5,13 @@
     "version": "0.1.0",
     "full_name": "Simon M. Hofmann",
     "email": "simon.m.hofmann@example.com",
-    "github_username": "SHEscher",
     "python_version": "3.11",
     "create_conda_env": true,
     "init_git": true,
     "use_black": true,
     "linting": [
         "ruff",
-        "flake8",
-        "none"
+        "flake8"
     ],
     "open_source_license": [
         "MIT license",
@@ -21,7 +19,7 @@
         "ISC license",
         "Apache Software License 2.0",
         "GNU General Public License v3",
-        "Not open source (yet)"
+        "I will add one later"
     ],
     "_copy_without_render": [
         "*.nii.gz",
@@ -34,16 +32,14 @@
         "version": "Version of your research project:",
         "full_name": "Provide the full name of the main author:",
         "email": "Provide the author's email:",
-        "github_username": "Provide the GitHub username or organization:",
         "python_version": "Which Python version to use:",
-        "create_conda_env": "Do you want to create a conda environment:",
+        "create_conda_env": "Do you want to create a project-specific conda environment:",
         "init_git": "Initialize a git repository in the project folder:",
-        "use_black": "Enable black formatting:",
+        "use_black": "Enable Black formatting for Python:",
         "linting": {
-            "__prompt__": "Which linting tool do you want to use?",
+            "__prompt__": "Which Python linter do you want to use?",
             "ruff": "Ruff",
-            "flake8": "Flake8",
-            "none": "No linting tool"
+            "flake8": "Flake8"
         },
         "open_source_license": "Select an (open source) license"
     }

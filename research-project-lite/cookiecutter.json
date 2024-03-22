@@ -5,7 +5,6 @@
     "version": "0.1.0",
     "full_name": "Simon M. Hofmann",
     "email": "simon.m.hofmann@example.com",
-    "github_username": "SHEscher",
     "init_git": true,
     "open_source_license": [
         "MIT license",
@@ -13,7 +12,7 @@
         "ISC license",
         "Apache Software License 2.0",
         "GNU General Public License v3",
-        "Not open source (yet)"
+        "I will add one later"
     ],
     "__prompts__": {
         "project_name": "Select your research project name:",
@@ -22,7 +21,6 @@
         "version": "Version of your research project:",
         "full_name": "Provide the full name of the main author:",
         "email": "Provide the author's email:",
-        "github_username": "Provide the GitHub username or organization:",
         "init_git": "Initialize a git repository in the project folder:",
         "open_source_license": "Select an (open source) license"
     }

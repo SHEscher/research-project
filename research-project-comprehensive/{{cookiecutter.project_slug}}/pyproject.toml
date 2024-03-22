@@ -39,11 +39,10 @@ develop = [
     "black[jupyter]>=24.2.0",
     {%- endif %}
     {%- if cookiecutter.linting == 'ruff' %}
-    "ruff>=0.3.3",
+    "ruff>=0.3.4",
     {%- elif cookiecutter.linting == 'flake8' %}
     "flake8>=7.0.0",
     {%- endif %}
-    "tox>=4.12.1",
     "pytest>=8.0.0",
     "pytest-cov>=4.1.0",
 ]
@@ -51,7 +50,7 @@ develop = [
 [project.urls]
 homepage = "https://www.{{ cookiecutter.project_slug }}.org" # TODO: change to actual homepage
 documentation = "https://readthedocs.org" # TODO: change to actual documentation
-repository = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}" # TODO: change to actual repository
+repository = "https://github.com/USER_NAME/{{ cookiecutter.project_slug }}" # TODO: change to actual repository (e.g., GitHub, GitLab, or so)
 # Consider other URLs: pre-registration, data repository, etc.
 
 # Entry points for the project
