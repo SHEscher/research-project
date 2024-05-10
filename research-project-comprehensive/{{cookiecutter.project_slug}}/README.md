@@ -38,7 +38,7 @@ conda activate {{ cookiecutter.project_slug[:4]}}_{{cookiecutter.python_version[
 Then install the code of the research project as python package:
 
 ```shell
-# assuming your current working dircetory is the project root
+# assuming your current working directory is the project root
 pip install -e ".[develop]"
 ```
 
