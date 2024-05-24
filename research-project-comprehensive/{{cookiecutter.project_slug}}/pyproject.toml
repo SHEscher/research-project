@@ -39,11 +39,11 @@ develop = [
     "black[jupyter]>=24.4.2",
     {%- endif %}
     {%- if cookiecutter.linting == 'ruff' %}
-    "ruff>=0.4.4",
+    "ruff>=0.4.5",
     {%- elif cookiecutter.linting == 'flake8' %}
     "flake8>=7.0.0",
     {%- endif %}
-    "pytest>=8.2.0",
+    "pytest>=8.2.1",
     "pytest-cov>=5.0.0",
 ]
 
@@ -189,7 +189,7 @@ lint.ignore = [
     "TD003",  # Missing issue link on the line following a To-Do
 ]
 
-lint.ignore-init-module-imports = true # void automatically removing unused imports in __init__.py
+# lint.ignore-init-module-imports = true # void automatically removing unused imports in __init__.py
 respect-gitignore = true          # files & folder ignored in gitignore are ignored by ruff as well [default: true]
 
 src = ["code/{{ cookiecutter.project_slug }}", "code/notebooks", "code/tests"]
