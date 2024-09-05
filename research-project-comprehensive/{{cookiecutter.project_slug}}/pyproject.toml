@@ -39,7 +39,7 @@ develop = [
     "black[jupyter]>=24.4.2",
     {%- endif %}
     {%- if cookiecutter.linting == 'ruff' %}
-    "ruff>=0.5.5",
+    "ruff>=0.6.4",
     {%- elif cookiecutter.linting == 'flake8' %}
     "flake8>=7.1.0",
     {%- endif %}
@@ -78,7 +78,7 @@ include = [
 exclude = ["tests", "notebooks", "configs"]
 
 # Include non-python files in the package (uncomment if needed)
-# [options.package_data]
+# [tool.setuptools.package_data]
 # {{ cookiecutter.project_slug }} = ["*.txt", "*.rst"]
 
 # Exclude specific non-python files in the package (uncomment if needed)
@@ -89,7 +89,7 @@ exclude = ["tests", "notebooks", "configs"]
 # ALL BELOW WAS ALREADY PART OF pyproject.toml [Oct, 2022]
 
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
+requires = ["setuptools>=62.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.pytest.ini_options]
