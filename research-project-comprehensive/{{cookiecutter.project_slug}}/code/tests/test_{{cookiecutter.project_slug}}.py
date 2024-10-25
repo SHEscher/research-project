@@ -9,7 +9,7 @@ from {{ cookiecutter.project_slug }}.preprocessing.freesurfer import foo
 # %% Set global vars & paths >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
 
-@pytest.fixture()
+@pytest.fixture
 def response():
     """
     Sample pytest fixture.
