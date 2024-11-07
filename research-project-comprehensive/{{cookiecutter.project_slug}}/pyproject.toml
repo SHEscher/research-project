@@ -12,7 +12,7 @@ authors = [
 maintainers = [
     { name = "{{ cookiecutter.full_name }}", email = "{{ cookiecutter.email }}" },
 ]
-keywords = ["very", "great", "study"] # TODO change to actual keywords
+keywords = ["very", "great", "study"] # TODO: change to actual keywords
 # Check for classifiers: https://pypi.org/classifiers/
 classifiers = [
     "Development Status :: 1 - Planning",
@@ -39,12 +39,12 @@ develop = [
     "black[jupyter]>=24.4.2",
     {%- endif %}
     {%- if cookiecutter.linting == 'ruff' %}
-    "ruff>=0.7.1",
+    "ruff>=0.7.2",
     {%- elif cookiecutter.linting == 'flake8' %}
     "flake8>=7.1.0",
     {%- endif %}
     "pytest>=8.3.3",
-    "pytest-cov>=5.0.0",
+    "pytest-cov>=6.0.0",
 ]
 
 [project.urls]
