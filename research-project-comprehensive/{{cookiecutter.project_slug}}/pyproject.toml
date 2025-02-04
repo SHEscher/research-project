@@ -36,14 +36,14 @@ dependencies = [
 [project.optional-dependencies]
 develop = [
     {%- if cookiecutter.use_black %}
-    "black[jupyter]>=24.4.2",
+    "black[jupyter]>=25.1.0",
     {%- endif %}
     {%- if cookiecutter.linting == 'ruff' %}
-    "ruff>=0.7.2",
+    "ruff>=0.9.2",
     {%- elif cookiecutter.linting == 'flake8' %}
     "flake8>=7.1.0",
     {%- endif %}
-    "pytest>=8.3.3",
+    "pytest>=8.3.4",
     "pytest-cov>=6.0.0",
 ]
 
@@ -173,8 +173,8 @@ lint.unfixable = [ # either with fix = true or when `ruff . --fix` is executed
 
 # Ignore specific rules (e.g., "ANN102") or the whole set of a rule (e.g., "ANN")
 lint.ignore = [
-    "ANN101", # flake8-annotations: Missing type annotation for self in method
-    "ANN102", # flake8-annotations: Missing type annotation for cls in classmethod
+    # "ANN101", # flake8-annotations: Missing type annotation for self in method [deprecated]
+    # "ANN102", # flake8-annotations: Missing type annotation for cls in classmethod [deprecated]
     "ANN401", # flake8-annotations: Any
     "COM812", # Trailing comma missing
     "D203",   # 1 blank line required before class docstring: incompatible with D211 (=no blank line required)

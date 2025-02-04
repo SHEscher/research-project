@@ -223,7 +223,8 @@ params = config.params  # ready for import in other scripts
 logging.config.dictConfig(config.logging.asdict())  # in other scripts: import logging & logging.getLogger(__name__)
 
 # Welcome
-print("\n" + ("*" * 95 + "\n") * 2 + "\n" + "\t" * 10 + PROJECT_NAME + "\n" * 2 + ("*" * 95 + "\n") * 2)
+_w = 95
+print("\n" + ("*" * _w + "\n") * 2 + "\n" + f"{PROJECT_NAME:^{_w}}" + "\n" * 2 + ("*" * _w + "\n") * 2)
 
 # Set project working directory
 _set_wd(PROJECT_ROOT)
