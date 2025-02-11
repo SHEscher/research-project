@@ -39,9 +39,9 @@ develop = [
     "black[jupyter]>=25.1.0",
     {%- endif %}
     {%- if cookiecutter.linting == 'ruff' %}
-    "ruff>=0.9.2",
+    "ruff>=0.9.6",
     {%- elif cookiecutter.linting == 'flake8' %}
-    "flake8>=7.1.0",
+    "flake8>=7.1.1",
     {%- endif %}
     "pytest>=8.3.4",
     "pytest-cov>=6.0.0",
@@ -122,8 +122,31 @@ directory = "code/tests/coverage_html_report"
 {%- if cookiecutter.linting == 'ruff' %}
 
 [tool.ruff]
+src = ["code/{{ cookiecutter.project_slug }}", "code/notebooks", "code/tests"]
+include = ["*.py", "*.pyi", "**/pyproject.toml", "*.ipynb"]
+
+# Exclude a variety of commonly ignored directories:
+extend-exclude = [
+    "code/configs",
+    "data",
+    "literature",
+    "organisation",
+    "publications",
+    "results",
+]
+
+line-length = 119 # same as flake8 & black
+target-version = "py{{ cookiecutter.python_version.replace('.', '') }}" # assume Python {{ cookiecutter.python_version }}
+output-format = "concise" # or "grouped", "full", ...
+# preview = true  # true: Ruff will use unstable rules and fixes; default: false
+
+fix = false # true: Ruff will try to fix certain errors automatically
+
+respect-gitignore = true # files & folder ignored in gitignore are ignored by ruff as well [default: true]
+
+[tool.ruff.lint]
 # Select rules / linters to apply
-lint.select = [ # add /comment-out rules (list below does not contain all rules)
+select = [ # add /comment-out rules (list below does not contain all rules)
     # "ALL",  # all rules
     "D",   # pydocstyle
     "E",   # pycodestyle [default]
@@ -162,19 +185,15 @@ lint.select = [ # add /comment-out rules (list below does not contain all rules)
     "NPY", # NumPy-specific rules
 ] # run `ruff linter` to see all rules; ; run e.g., `ruff rule ERA001` to see specs of specific rule
 
-fix = false # true: Ruff will try to fix certain errors automatically
-
 # List of rules to consider non-autofix-able.
-lint.unfixable = [ # either with fix = true or when `ruff . --fix` is executed
+unfixable = [ # either with fix = true or when `ruff . --fix` is executed
     "ERA001", # found commented-out code
     "F401",   # unused imports
     "RUF100", # `noqa` directives that are no longer applicable
 ]
 
 # Ignore specific rules (e.g., "ANN102") or the whole set of a rule (e.g., "ANN")
-lint.ignore = [
-    # "ANN101", # flake8-annotations: Missing type annotation for self in method [deprecated]
-    # "ANN102", # flake8-annotations: Missing type annotation for cls in classmethod [deprecated]
+ignore = [
     "ANN401", # flake8-annotations: Any
     "COM812", # Trailing comma missing
     "D203",   # 1 blank line required before class docstring: incompatible with D211 (=no blank line required)
@@ -189,26 +208,7 @@ lint.ignore = [
     "TD003",  # Missing issue link on the line following a To-Do
 ]
 
-# lint.ignore-init-module-imports = true # void automatically removing unused imports in __init__.py
-respect-gitignore = true          # files & folder ignored in gitignore are ignored by ruff as well [default: true]
-
-src = ["code/{{ cookiecutter.project_slug }}", "code/notebooks", "code/tests"]
-include = ["*.py", "*.pyi", "**/pyproject.toml", "*.ipynb"]
-
-# Exclude a variety of commonly ignored directories:
-extend-exclude = [
-    "code/configs",
-    "data",
-    "literature",
-    "organisation",
-    "publications",
-    "results",
-]
-
-line-length = 119 # same as flake8 & black
-target-version = "py{{ cookiecutter.python_version.replace('.', '') }}" # assume Python {{ cookiecutter.python_version }}
-output-format = "concise" # or "grouped", "full", ...
-# preview = true  # true: Ruff will use unstable rules and fixes; default: false
+# ignore-init-module-imports = true # void automatically removing unused imports in __init__.py
 
 # Ignore specific rules in specific files
 [tool.ruff.lint.extend-per-file-ignores]
