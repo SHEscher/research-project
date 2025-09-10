@@ -68,6 +68,7 @@ And this is an excerpt of what you get:
 
 - [ ] Option to add multiple authors
 - [ ] Option to add project keywords
+- [ ] Option to use other package manager than conda (specifically uv, and pixi)
 - [ ] Optional: Add examples for other data types than MRI, including simulation studies
 - [ ] ...
 
