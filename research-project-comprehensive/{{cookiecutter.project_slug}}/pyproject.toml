@@ -39,12 +39,12 @@ develop = [
     "black[jupyter]>=25.1.0",
     {%- endif %}
     {%- if cookiecutter.linting == 'ruff' %}
-    "ruff>=0.9.6",
+    "ruff>=0.12.12",
     {%- elif cookiecutter.linting == 'flake8' %}
-    "flake8>=7.1.1",
+    "flake8>=7.3.0",
     {%- endif %}
-    "pytest>=8.3.4",
-    "pytest-cov>=6.0.0",
+    "pytest>=8.4.2",
+    "pytest-cov>=7.0.0",
 ]
 
 [project.urls]
