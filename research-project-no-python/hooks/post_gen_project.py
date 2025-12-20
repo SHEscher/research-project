@@ -34,7 +34,7 @@ pass
 if __name__ == "__main__":
 
     # Remove license file if not open source
-    if "Not open source" in "{{ cookiecutter.open_source_license }}":
+    if "I will add one later" in "{{ cookiecutter.open_source_license }}":
         (PROJECT_DIRECTORY / "LICENSE").unlink()
 
     # Remove all empty *_FILES
