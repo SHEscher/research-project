@@ -252,3 +252,6 @@ max-returns = 6       # default: 6
 max-statements = 50   # default: 50
 max-nested-blocks = 5 # default: 5
 # allow-magic-value-types = ["int"]
+
+[tool.ty.terminal]
+output-format = "concise" # or "full"
