@@ -24,7 +24,7 @@ classifiers = [
 ]
 
 # Similar to a requirements.txt file, fill in the dependencies your project requires
-# Install the project code as Python module with `pip install -e .`
+# Install the project code as a Python module with `pip install -e .`
 dependencies = [
     "ipykernel",
     "numpy",
@@ -35,16 +35,10 @@ dependencies = [
 # Following can be co-installed with `pip install -e .[develop]`
 [project.optional-dependencies]
 develop = [
-    {%- if cookiecutter.use_black %}
-    "black[jupyter]>=25.1.0",
-    {%- endif %}
-    {%- if cookiecutter.linting == 'ruff' %}
-    "ruff>=0.12.12",
-    {%- elif cookiecutter.linting == 'flake8' %}
-    "flake8>=7.3.0",
-    {%- endif %}
-    "pytest>=8.4.2",
+    "ruff>=0.14.10",
+    "pytest>=9.0.2",
     "pytest-cov>=7.0.0",
+    "ty>=0.0.4"
 ]
 
 [project.urls]
@@ -119,8 +113,6 @@ exclude_lines = ["if __name__ == .__main__.:", "if TYPE_CHECKING:", "@abstract"]
 [tool.coverage.html]
 directory = "code/tests/coverage_html_report"
 
-{%- if cookiecutter.linting == 'ruff' %}
-
 [tool.ruff]
 src = ["code/{{ cookiecutter.project_slug }}", "code/notebooks", "code/tests"]
 include = ["*.py", "*.pyi", "**/pyproject.toml", "*.ipynb"]
@@ -146,7 +138,7 @@ respect-gitignore = true # files & folder ignored in gitignore are ignored by ru
 
 [tool.ruff.lint]
 # Select rules / linters to apply
-select = [ # add /comment-out rules (list below does not contain all rules)
+select = [ # add /comment-out rules (the list below does not contain all rules)
     # "ALL",  # all rules
     "D",   # pydocstyle
     "E",   # pycodestyle [default]
@@ -183,7 +175,7 @@ select = [ # add /comment-out rules (list below does not contain all rules)
     "PD",  # pandas-vet
     "PL",  # Pylint
     "NPY", # NumPy-specific rules
-] # run `ruff linter` to see all rules; ; run e.g., `ruff rule ERA001` to see specs of specific rule
+] # run `ruff linter` to see all rules; run e.g., `ruff rule ERA001` to see specs of a specific rule
 
 # List of rules to consider non-autofix-able.
 unfixable = [ # either with fix = true or when `ruff . --fix` is executed
@@ -197,9 +189,9 @@ ignore = [
     "ANN401", # flake8-annotations: Any
     "COM812", # Trailing comma missing
     "D203",   # 1 blank line required before class docstring: incompatible with D211 (=no blank line required)
-    "D212",   # multi-line-summary-first-line incompatible with D213 (=should start at second line)
+    "D212",   # multi-line-summary-first-line incompatible with D213 (=should start at the second line)
     "DTZ005", # timezone-naive datetime
-    "E402",   # Module level import not at top of file (covert by ISORT)
+    "E402",   # Module level import not at top of the file (covert by ISORT)
     # "E501",  # Ignore line-length since we use 119
     # "ERA001",  # Found commented-out code
     "ISC001",  # single-line-implicit-string-concatenation [toogle if you use `ruff format`]
@@ -260,32 +252,3 @@ max-returns = 6       # default: 6
 max-statements = 50   # default: 50
 max-nested-blocks = 5 # default: 5
 # allow-magic-value-types = ["int"]
-
-{%- elif cookiecutter.linting == 'flake8' %}
-
-[tool.flake8]
-max-line-length = 119
-
-{%- endif %}
-
-{%- if cookiecutter.use_black %}
-
-[tool.black]
-line-length = 119
-target-version = ["py{{ cookiecutter.python_version.replace('.', '') }}"]
-src = ["code/{{ cookiecutter.project_slug }}", "code/notebooks", "code/tests"]
-include = '(\.pyi?|\.ipynb)$'
-exclude = '''  # A regex preceded with ^/ will apply only to files and directories in the root of the project.
-(
-  ^/code/configs
-  | ^/data
-  | ^/literature
-  | ^/organisation
-  | ^/publications
-  | ^/results
-  | /*/\..*  # ignore (hidden) files in hidden directories
-)
-'''
-# preview = true  # include unstable / upcoming black features
-
-{%- endif %}

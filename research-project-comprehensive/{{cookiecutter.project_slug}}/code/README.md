@@ -19,14 +19,15 @@ One could add here more implementation-specific information (e.g., which toolbox
 ## Codebase
 
 *Refer to the corresponding code/scripts written for the analysis/simulation/etc.
-Which languages (Python, R, Matlab, ...) were used? Are there specific package versions,
-which one should take care of? Or is there a container (e.g., Docker) or virtual environment?*
+Which languages (Python, R, Matlab, ...) were used?
+Are there specific package versions that one should take care of?
+Or is there a container (e.g., Docker) or virtual environment?*
 
 ### Python
 
 Python code (in the structure of a python package) is stored in `./code/{{ cookiecutter.project_slug }}/`
 
-To install the research code as package, run the following code in the project root directory:
+To install the research code as a package, run the following code in the project root directory:
 
 ```shell
 pip install -e ".[develop]"
@@ -51,7 +52,7 @@ Private config files that contain, e.g., passwords, and therefore should not be 
 or mirrored to a remote repository can be listed in: `./code/configs/private_config.toml`
 
 Both files will be read out by the script in `./code/{{ cookiecutter.project_slug }}/configs.py`.
-Keep both config toml files and the script in the places, where they are.
+Keep both config toml files and the script in the places where they are.
 
 To use your configs in your python scripts, do the following:
 

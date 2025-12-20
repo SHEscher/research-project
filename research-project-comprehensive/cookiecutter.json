@@ -5,14 +5,9 @@
     "version": "0.1.0",
     "full_name": "Simon M. Hofmann",
     "email": "simon.m.hofmann@example.com",
-    "python_version": "3.12",
+    "python_version": "3.13",
     "create_conda_env": true,
     "init_git": true,
-    "use_black": true,
-    "linting": [
-        "ruff",
-        "flake8"
-    ],
     "open_source_license": [
         "MIT license",
         "BSD license",
@@ -35,12 +30,6 @@
         "python_version": "Which Python version to use:",
         "create_conda_env": "Do you want to create a project-specific conda environment:",
         "init_git": "Initialize a git repository in the project folder:",
-        "use_black": "Enable Black formatting for Python:",
-        "linting": {
-            "__prompt__": "Which Python linter do you want to use?",
-            "ruff": "Ruff (recommended)",
-            "flake8": "Flake8"
-        },
         "open_source_license": "Select an (open source) license"
     }
 }

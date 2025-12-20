@@ -37,7 +37,7 @@ style="{"
 datefmt = "%Y-%m-%d %H:%M:%S"
 
 [logging.handlers.file_handler]
-level = "DEBUG"   # == 10  (pass int or string)
+level = "DEBUG"   # == 10 (pass int or string)
 formatter = "fmtfile"
 filename = "code/logs/{{ cookiecutter.project_slug }}.log"  # parent dir must exist
 class = "logging.FileHandler"  # for file output
@@ -59,7 +59,7 @@ handlers = ["file_handler", "stream_handler"]
 # formatter = "fmtfile"
 # filename = "logs/NAME_OF_LOGFILE.log"
 # class = "logging.handlers.RotatingFileHandler"
-# maxBytes = 5_000_000  # approx. 5 MB
+# maxBytes = 5_000_000 # approx. 5 MB
 # backupCount=20
 
 # [logging.loggers.NAME_OF_LOGGER]

@@ -1,10 +1,10 @@
 """
 Use me as a template for other Python scripts.
 
-You can add me as file template for python in your IDE:
+You can add me as a file template for python in your IDE:
     PyCharm: Settings > File and Code Templates > Python Script
     VS Code: e.g., as Snippets
-    etc: ...
+    etc.: ...
 
 This template assumes a max line-length of 119
 

@@ -22,7 +22,7 @@ def main():
     """
     Run the main.
 
-    This runs some example functions and logs a message, which demonstrates, how the `research-project` is structured.
+    This runs some example functions and logs a message, which demonstrates how the `research-project` is structured.
     """
     # First, we extract a variable from the config object.
     # The variable 'service_x.api_key' comes from the private config file: `private_config.toml`.

@@ -7,4 +7,4 @@ email = "{{ cookiecutter.email }}"
 [service_x]
 api_key = "MY_API_KEY"
 
-# NOTE: This file must stay ignored by git, so that you can safely store your credentials here.
+# NOTE: This file must stay ignored by git so that you can safely store your credentials here.

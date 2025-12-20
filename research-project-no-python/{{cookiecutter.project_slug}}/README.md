@@ -19,7 +19,10 @@
 
 ## Project structure
 
-*A brief description of the folder structure of the project (Where is what?). Anticipate new lab members who suppose to be able to orientate within this structure without your help. At the same time, avoid too detailed descriptions. Down the folder structure, there suppose to be further README's explaining subsequent folders & data.*
+*A brief description of the project's folder structure (Where is what?).
+Anticipate new lab members who are supposed to be able to orientate within this structure without your help.
+At the same time, avoid too detailed descriptions.
+Down the folder structure, there are supposed to be further README's explaining subsequent folders & data.*
 
 ## Publications
 

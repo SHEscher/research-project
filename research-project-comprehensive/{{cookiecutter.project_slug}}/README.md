@@ -19,11 +19,14 @@
 
 ## Project structure
 
-*A brief description of the folder structure of the project (Where is what?). Anticipate new lab members who suppose to be able to orientate within this structure without your help. At the same time, avoid too detailed descriptions. Down the folder structure, there suppose to be further README's explaining subsequent folders & data.*
+*A brief description of the project's folder structure (Where is what?).
+Anticipate new lab members who are supposed to be able to orientate within this structure without your help.
+At the same time, avoid too detailed descriptions.
+Down the folder structure, there are supposed to be further README's explaining subsequent folders & data.*
 
-## Install research code as package
+## Install research code as a package
 
-In case, there is no project-related virtual / conda environment yet, create one for the project:
+In case there is no project-related virtual / conda environment yet, create one for the project:
 
 ```shell
 conda create -n {{ cookiecutter.project_slug[:4]}}_{{cookiecutter.python_version[:4] }} python={{ cookiecutter.python_version }}
@@ -35,7 +38,7 @@ And activate it:
 conda activate {{ cookiecutter.project_slug[:4]}}_{{cookiecutter.python_version[:4] }}
 ```
 
-Then install the code of the research project as python package:
+Then install the code of the research project as a `Python` package:
 
 ```shell
 # assuming your current working directory is the project root

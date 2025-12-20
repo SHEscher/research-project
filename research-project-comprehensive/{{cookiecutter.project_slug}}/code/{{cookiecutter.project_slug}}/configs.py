@@ -4,7 +4,7 @@ Configurations for the {{ cookiecutter.project_name }} project.
 Note:
 ----
     * store private configs in the same folder as 'config.toml', namely: "./[PRIVATE_PREFIX]_configs.toml"
-    * keep the prefix, such that it is ignored by git
+    * keep the prefix such that it is ignored by git
 
 Alternatives:
 -----------
@@ -38,7 +38,7 @@ from typing import Any
 
 
 def _iter_nested_dicts(nested_dict: dict[str, Any]) -> Any:
-    """Create generator iterating over values in nested dicts."""
+    """Create a generator iterating over values in nested dicts."""
     for value in nested_dict.values():
         if isinstance(value, dict):
             yield from _iter_nested_dicts(value)
@@ -81,7 +81,7 @@ class _CONFIG:
         return str_out + ")"
 
     def update(self, new_configs: dict[str, Any]):
-        """Update config object with new entries."""
+        """Update the config object with new entries."""
         for k, val in new_configs.items():
             if isinstance(val, (list, tuple)):
                 setattr(self, k, [_CONFIG(x) if isinstance(x, dict) else x for x in val])
@@ -116,7 +116,7 @@ class _CONFIG:
 
     def update_paths(self, parent_path: str | None = None, for_logging: bool = False):
         """Update relative paths to PROJECT_ROOT dir."""
-        # Use project root dir as parent path if not specified
+        # Use the project root dir as the parent path if not specified
         parent_path = self.PROJECT_ROOT if hasattr(self, "PROJECT_ROOT") else parent_path
 
         if parent_path is not None:
@@ -138,9 +138,9 @@ class _CONFIG:
 
 def _set_wd(new_dir: str | Path) -> None:
     """
-    Set the given directory as new working directory of the project.
+    Set the given directory as the new working directory of the project.
 
-    :param new_dir: name of new working directory (must be in project folder)
+    :param new_dir: name of new working directory (must be in the project folder)
     """
     if PROJECT_NAME not in str(Path.cwd()):
         msg = f"Current working dir '{Path.cwd()}' is outside of project '{PROJECT_NAME}'."
@@ -160,7 +160,7 @@ def _set_wd(new_dir: str | Path) -> None:
         # Remove '/' if new_dir == 'folder/' OR '/folder'
         new_dir = new_dir.name
 
-        # Check if new_dir is current dir
+        # Check if new_dir is the current dir
         found = new_dir == Path.cwd().name
         change_dir = not found
 
@@ -203,12 +203,12 @@ for config_file in Path(__file__).parent.glob("../configs/*config.toml"):
 # Extract some useful globals
 PROJECT_NAME = config.PROJECT_NAME  # ready for import in other scripts
 
-# Get project root path
+# Get the project root path
 if hasattr(config.paths, "PROJECT_ROOT"):
     PROJECT_ROOT = config.paths.PROJECT_ROOT  # ready for import in other scripts
 else:
     PROJECT_ROOT = __file__[: __file__.find(PROJECT_NAME) + len(PROJECT_NAME)]
-    # Set root path to config file & update paths
+    # Set the root path to the config file & update paths
     config.paths.PROJECT_ROOT = PROJECT_ROOT
     config.paths.update_paths()
 
@@ -217,7 +217,7 @@ config.logging.update_paths(parent_path=PROJECT_ROOT, for_logging=True)
 _create_parent_dirs(config_as_dict=config.logging.asdict())
 
 
-# Extract paths & params, and set logging configs
+# Extract paths & params and set logging configs
 paths = config.paths  # ready for import in other scripts
 params = config.params  # ready for import in other scripts
 logging.config.dictConfig(config.logging.asdict())  # in other scripts: import logging & logging.getLogger(__name__)
@@ -226,7 +226,7 @@ logging.config.dictConfig(config.logging.asdict())  # in other scripts: import l
 _w = 95
 print("\n" + ("*" * _w + "\n") * 2 + "\n" + f"{PROJECT_NAME:^{_w}}" + "\n" * 2 + ("*" * _w + "\n") * 2)
 
-# Set project working directory
+# Set the project working directory
 _set_wd(PROJECT_ROOT)
 
 # o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o END
