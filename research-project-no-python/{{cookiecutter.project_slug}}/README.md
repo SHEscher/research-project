@@ -8,7 +8,7 @@
 
 ***
 
-![Last update](https://img.shields.io/badge/last_update-{% now 'local', '%b_%e,_%Y' %}-green)
+![Last update](https://img.shields.io/badge/last_update-{% now 'local', '%b_%-d,_%Y' %}-green)
 [![🚀 scilaunch](https://img.shields.io/badge/based%20on-🚀%20scilaunch-salmon "🚀")](https://shescher.github.io/scilaunch/)
 
 *In general, one can add READMEs in nearly every folder.

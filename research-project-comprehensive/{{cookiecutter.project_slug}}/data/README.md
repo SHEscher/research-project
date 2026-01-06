@@ -1,6 +1,6 @@
 # {{ cookiecutter.project_name }} – **data**
 
-    Last update:    {% now 'local', '%B %e, %Y' %}
+    Last update:    {% now 'local', '%B %-d, %Y' %}
     Status:         in preparation
 
 ***
