@@ -35,16 +35,16 @@ dependencies = [
 # Following can be co-installed with `pip install -e .[develop]`
 [project.optional-dependencies]
 develop = [
-    "ruff>=0.15.2",
+    "ruff>=0.15.5",
     "pytest>=9.0.2",
     "pytest-cov>=7.0.0",
-    "ty>=0.0.17"
+    "ty>=0.0.21"
 ]
 
 [project.urls]
-homepage = "https://www.{{ cookiecutter.project_slug }}.org" # TODO: change to actual homepage
-documentation = "https://readthedocs.org" # TODO: change to actual documentation
-repository = "https://github.com/USER_NAME/{{ cookiecutter.project_slug }}" # TODO: change to actual repository (e.g., GitHub, GitLab, or so)
+# homepage = "https://www.{{ cookiecutter.project_slug }}.org" # TODO: change to actual homepage and uncomment
+# documentation = "https://readthedocs.org" # TODO: change to actual documentation  and uncomment
+# repository = "https://github.com/USER_NAME/{{ cookiecutter.project_slug }}" # TODO: change to actual repository (e.g., GitHub, GitLab, or so)
 # Consider other URLs: pre-registration, data repository, etc.
 
 # Entry points for the project
