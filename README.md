@@ -59,9 +59,8 @@ And this is an excerpt of what you get:
 │   ├── 📁 poster
 │   └── 📁 presentations
 ├── 📄 pyproject.toml
-├── 📂 results
-│   └── 📁 datavisualization
-└── 🐍 setup.py
+└── 📂 results
+    └── 📁 datavisualization
 ```
 
 ## TODO's
