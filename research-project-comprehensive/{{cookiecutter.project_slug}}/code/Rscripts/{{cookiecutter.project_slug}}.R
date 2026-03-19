@@ -6,11 +6,15 @@
 
 # package dependencies
 library(ggplot2)
+source("code/Rscripts/configs.R")
+# exposes config, paths, params, PROJECT_NAME, PROJECT_ROOT
 
 # session info
 # setwd(PROJECT_ROOT)
 print(paste("Current working dir:", as.character(getwd())))
 sessionInfo()
+print(paste("The data folder is at:", config$paths$DATA))
+print(paste("The weight decay is set to:", config$params$weight_decay))
 
 # code
 print("put your R code here")
