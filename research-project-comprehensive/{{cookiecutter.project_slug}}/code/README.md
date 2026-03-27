@@ -51,7 +51,7 @@ Paths to data, parameter settings, etc. are stored in the config file: `./code/c
 Private config files that contain, e.g., passwords, and therefore should not be shared,
 or mirrored to a remote repository can be listed in: `./code/configs/private_config.toml`
 
-Both files will be read out by the script in `./code/{{ cookiecutter.project_slug }}/configs.py`.
+Both files will be read out by the script in `./code/{{ cookiecutter.project_slug }}/configs.py` (or `./code/Rscripts/configs.R` for R).
 Keep both config toml files and the script in the places where they are.
 
 To use your configs in your python scripts, do the following:
