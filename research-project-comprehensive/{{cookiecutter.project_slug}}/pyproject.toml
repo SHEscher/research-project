@@ -35,10 +35,10 @@ dependencies = [
 # Following can be co-installed with `pip install -e .[develop]`
 [project.optional-dependencies]
 develop = [
-    "ruff>=0.15.7",
+    "ruff>=0.15.8",
     "pytest>=9.0.2",
-    "pytest-cov>=7.0.0",
-    "ty>=0.0.24"
+    "pytest-cov>=7.1.0",
+    "ty>=0.0.26"
 ]
 
 [project.urls]
