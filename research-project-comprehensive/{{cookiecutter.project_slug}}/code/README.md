@@ -54,7 +54,7 @@ or mirrored to a remote repository can be listed in: `./code/configs/private_con
 Both files will be read out by the script in `./code/{{ cookiecutter.project_slug }}/configs.py` (or `./code/Rscripts/configs.R` for R).
 Keep both config toml files and the script in the places where they are.
 
-To use your configs in your python scripts, do the following:
+To use your configs in your `Python` scripts, do the following:
 
 ```python
 from {{ cookiecutter.project_slug }}.configs import config, paths
@@ -70,6 +70,14 @@ weight_decay = config.params.weight_decay
 
 # Get private parameter from config
 api_key = config.service_x.api_key
+```
+
+In `R`, you can use the `config` object in a similar way:
+
+```R
+source("code/Rscripts/configs.R")
+path_to_data <- config$paths$DATA
+weight_decay <- config$params$weight_decay
 ```
 
 *Fill the corresponding `*config.toml` files with your data.*
